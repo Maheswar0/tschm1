@@ -5,8 +5,6 @@ root: docs/index
 parts:
   - caption: "Overview"
     chapters:
-      - file: docs/overview
-
-      - file: docs/python_intro/index
+      - file: docs/chapters/index
         sections:
-            - glob: docs/python_intro/notebooks/*
+            - glob: docs/chapters/notebooks/*
