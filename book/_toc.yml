@@ -1,0 +1,13 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+format: jb-book
+root: docs/index
+parts:
+  - caption: "Overview"
+    chapters:
+      - file: docs/overview
+
+      - file: docs/python_intro/index
+        sections:
+            - glob: docs/python_intro/notebooks/*
+
