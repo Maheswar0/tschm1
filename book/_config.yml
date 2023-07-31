@@ -14,7 +14,7 @@ execute:
     # those notebooks are extremely expensive
     #- docs/intro/notebooks/tv_inpainting.ipynb
     # The exercises shall not be compiled, there code is incomplete and left as an exercise
-    - "exercises/notebooks/*.ipynb"
+    #- "exercises/notebooks/*.ipynb"
 
 sphinx:
   config:
