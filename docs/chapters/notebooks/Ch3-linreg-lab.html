@@ -459,18 +459,6 @@ level.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">import</span> <span class="n">subplots</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <section id="new-imports">
 <h3>New imports<a class="headerlink" href="#new-imports" title="Permalink to this heading">#</a></h3>
@@ -482,16 +470,6 @@ lines tells us what libraries are used.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;statsmodels&#39;
 </pre></div>
 </div>
 </div>
@@ -511,18 +489,6 @@ which we import here.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">statsmodels.stats.outliers_influence</span> \
-<span class="g g-Whitespace">      </span><span class="mi">2</span>      <span class="kn">import</span> <span class="nn">variance_inflation_factor</span> <span class="k">as</span> <span class="nn">VIF</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">statsmodels.stats.anova</span> <span class="kn">import</span> <span class="n">anova_lm</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;statsmodels&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>As one of the import statements above is quite a long line, we inserted a line break <code class="docutils literal notranslate"><span class="pre">\</span></code> to
 ease readability.</p>
@@ -534,19 +500,6 @@ package.</p>
 <span class="kn">from</span> <span class="nn">ISLP.models</span> <span class="kn">import</span> <span class="p">(</span><span class="n">ModelSpec</span> <span class="k">as</span> <span class="n">MS</span><span class="p">,</span>
                          <span class="n">summarize</span><span class="p">,</span>
                          <span class="n">poly</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">ISLP</span> <span class="kn">import</span> <span class="n">load_data</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">ISLP.models</span> <span class="kn">import</span> <span class="p">(</span><span class="n">ModelSpec</span> <span class="k">as</span> <span class="n">MS</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>                          <span class="n">summarize</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>                          <span class="n">poly</span><span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;ISLP&#39;
 </pre></div>
 </div>
 </div>
@@ -566,7 +519,9 @@ objects in a namespace.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;In&#39;,
+ &#39;MS&#39;,
  &#39;Out&#39;,
+ &#39;VIF&#39;,
  &#39;_&#39;,
  &#39;__&#39;,
  &#39;___&#39;,
@@ -588,11 +543,18 @@ objects in a namespace.</p>
  &#39;_ii&#39;,
  &#39;_iii&#39;,
  &#39;_oh&#39;,
+ &#39;anova_lm&#39;,
  &#39;exit&#39;,
  &#39;get_ipython&#39;,
+ &#39;load_data&#39;,
  &#39;np&#39;,
  &#39;open&#39;,
- &#39;quit&#39;]
+ &#39;pd&#39;,
+ &#39;poly&#39;,
+ &#39;quit&#39;,
+ &#39;sm&#39;,
+ &#39;subplots&#39;,
+ &#39;summarize&#39;]
 </pre></div>
 </div>
 </div>
@@ -819,13 +781,9 @@ regression methods.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">Boston</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="s2">&quot;Boston&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">Boston</span><span class="o">.</span><span class="n">columns</span>
-
-<span class="ne">NameError</span>: name &#39;load_data&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;crim&#39;, &#39;zn&#39;, &#39;indus&#39;, &#39;chas&#39;, &#39;nox&#39;, &#39;rm&#39;, &#39;age&#39;, &#39;dis&#39;, &#39;rad&#39;, &#39;tax&#39;,
+       &#39;ptratio&#39;, &#39;lstat&#39;, &#39;medv&#39;],
+      dtype=&#39;object&#39;)
 </pre></div>
 </div>
 </div>
@@ -844,17 +802,52 @@ For this model, we can create the model matrix by hand.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">X</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;intercept&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">Boston</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>                   <span class="s1">&#39;lstat&#39;</span><span class="p">:</span> <span class="n">Boston</span><span class="p">[</span><span class="s1">&#39;lstat&#39;</span><span class="p">]})</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">X</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;pd&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>intercept</th>
+      <th>lstat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>4.98</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.0</td>
+      <td>9.14</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.0</td>
+      <td>4.03</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.0</td>
+      <td>2.94</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>We extract the response, and fit the model.</p>
 <div class="cell docutils container">
@@ -862,18 +855,6 @@ For this model, we can create the model matrix by hand.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">Boston</span><span class="p">[</span><span class="s1">&#39;medv&#39;</span><span class="p">]</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
 <span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Boston</span><span class="p">[</span><span class="s1">&#39;medv&#39;</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;Boston&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -892,15 +873,48 @@ method, and returns such a summary.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">summarize</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;summarize&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>coef</th>
+      <th>std err</th>
+      <th>t</th>
+      <th>P&gt;|t|</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>intercept</th>
+      <td>34.5538</td>
+      <td>0.563</td>
+      <td>61.415</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>lstat</th>
+      <td>-0.9500</td>
+      <td>0.039</td>
+      <td>-24.528</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Before we describe other methods for working with fitted models, we outline a more useful and general framework for constructing a model matrix~<code class="docutils literal notranslate"><span class="pre">X</span></code>.</p>
 <section id="using-transformations-fit-and-transform">
@@ -939,17 +953,52 @@ method applies the fitted transformation to the array of data, and produces the 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">design</span> <span class="o">=</span> <span class="n">MS</span><span class="p">([</span><span class="s1">&#39;lstat&#39;</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">design</span> <span class="o">=</span> <span class="n">design</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Boston</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">X</span> <span class="o">=</span> <span class="n">design</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">Boston</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;MS&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>intercept</th>
+      <th>lstat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>4.98</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.0</td>
+      <td>9.14</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.0</td>
+      <td>4.03</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.0</td>
+      <td>2.94</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>In this simple case, the <code class="docutils literal notranslate"><span class="pre">fit()</span></code>  method does very little; it simply checks that the variable <code class="docutils literal notranslate"><span class="pre">'lstat'</span></code> specified in <code class="docutils literal notranslate"><span class="pre">design</span></code> exists in <code class="docutils literal notranslate"><span class="pre">Boston</span></code>. Then <code class="docutils literal notranslate"><span class="pre">transform()</span></code> constructs the model matrix with two columns: an <code class="docutils literal notranslate"><span class="pre">intercept</span></code> and the variable <code class="docutils literal notranslate"><span class="pre">lstat</span></code>.</p>
 <p>These two operations can be  combined with the
@@ -963,17 +1012,52 @@ method applies the fitted transformation to the array of data, and produces the 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">design</span> <span class="o">=</span> <span class="n">MS</span><span class="p">([</span><span class="s1">&#39;lstat&#39;</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">X</span> <span class="o">=</span> <span class="n">design</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">Boston</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">X</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;MS&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>intercept</th>
+      <th>lstat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>4.98</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.0</td>
+      <td>9.14</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.0</td>
+      <td>4.03</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.0</td>
+      <td>2.94</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Note that, as in the previous code chunk when the two steps were done separately, the <code class="docutils literal notranslate"><span class="pre">design</span></code> object is changed as a result of the <code class="docutils literal notranslate"><span class="pre">fit()</span></code> operation. The power of this pipeline will become clearer when we fit more complex models that involve interactions and transformations.</p>
 <p>Let’s return to our fitted regression model.
@@ -989,15 +1073,61 @@ method.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">results</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;results&#39; is not defined
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>          <td>medv</td>       <th>  R-squared:         </th> <td>   0.544</td>
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.543</td>
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   601.6</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Tue, 01 Aug 2023</td> <th>  Prob (F-statistic):</th> <td>5.08e-88</td>
+</tr>
+<tr>
+  <th>Time:</th>                 <td>00:04:04</td>     <th>  Log-Likelihood:    </th> <td> -1641.5</td>
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>   506</td>      <th>  AIC:               </th> <td>   3287.</td>
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>   504</td>      <th>  BIC:               </th> <td>   3295.</td>
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     1</td>      <th>                     </th>     <td> </td>   
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>   
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+      <td></td>         <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>intercept</th> <td>   34.5538</td> <td>    0.563</td> <td>   61.415</td> <td> 0.000</td> <td>   33.448</td> <td>   35.659</td>
+</tr>
+<tr>
+  <th>lstat</th>     <td>   -0.9500</td> <td>    0.039</td> <td>  -24.528</td> <td> 0.000</td> <td>   -1.026</td> <td>   -0.874</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td>137.043</td> <th>  Durbin-Watson:     </th> <td>   0.892</td>
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.000</td>  <th>  Jarque-Bera (JB):  </th> <td> 291.373</td>
+</tr>
+<tr>
+  <th>Skew:</th>          <td> 1.453</td>  <th>  Prob(JB):          </th> <td>5.36e-64</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 5.319</td>  <th>  Cond. No.          </th> <td>    29.7</td>
+</tr>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
 </div>
 <p>The fitted coefficients can also be retrieved as the
 <code class="docutils literal notranslate"><span class="pre">params</span></code> attribute of <code class="docutils literal notranslate"><span class="pre">results</span></code>.</p>
@@ -1008,12 +1138,9 @@ method.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">results</span><span class="o">.</span><span class="n">params</span>
-
-<span class="ne">NameError</span>: name &#39;results&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>intercept    34.553841
+lstat        -0.950049
+dtype: float64
 </pre></div>
 </div>
 </div>
@@ -1031,17 +1158,47 @@ We then use the <code class="docutils literal notranslate"><span class="pre">tra
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">new_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;lstat&#39;</span><span class="p">:[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">]})</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">newX</span> <span class="o">=</span> <span class="n">design</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">new_df</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">newX</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;pd&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>intercept</th>
+      <th>lstat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.0</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.0</td>
+      <td>15</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Next we compute the predictions at <code class="docutils literal notranslate"><span class="pre">newX</span></code>, and view them by extracting the <code class="docutils literal notranslate"><span class="pre">predicted_mean</span></code> attribute.</p>
 <div class="cell docutils container">
@@ -1052,13 +1209,7 @@ We then use the <code class="docutils literal notranslate"><span class="pre">tra
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">new_predictions</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">get_prediction</span><span class="p">(</span><span class="n">newX</span><span class="p">);</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">new_predictions</span><span class="o">.</span><span class="n">predicted_mean</span>
-
-<span class="ne">NameError</span>: name &#39;results&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([29.80359411, 25.05334734, 20.30310057])
 </pre></div>
 </div>
 </div>
@@ -1071,12 +1222,9 @@ We then use the <code class="docutils literal notranslate"><span class="pre">tra
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">18</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">new_predictions</span><span class="o">.</span><span class="n">conf_int</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;new_predictions&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[29.00741194, 30.59977628],
+       [24.47413202, 25.63256267],
+       [19.73158815, 20.87461299]])
 </pre></div>
 </div>
 </div>
@@ -1089,12 +1237,9 @@ We then use the <code class="docutils literal notranslate"><span class="pre">tra
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">19</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">new_predictions</span><span class="o">.</span><span class="n">conf_int</span><span class="p">(</span><span class="n">obs</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;new_predictions&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[17.56567478, 42.04151344],
+       [12.82762635, 37.27906833],
+       [ 8.0777421 , 32.52845905]])
 </pre></div>
 </div>
 </div>
@@ -1164,19 +1309,7 @@ defining functions in <a class="reference external" href="https://docs.python.or
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">22</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">Boston</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;lstat&#39;</span><span class="p">,</span> <span class="s1">&#39;medv&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">abline</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>        <span class="n">results</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>        <span class="n">results</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>        <span class="s1">&#39;r--&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>        <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;Boston&#39; is not defined
-</pre></div>
-</div>
+<img alt="../../../_images/f2015078e04e08667d3d8067d70745c65d50224eb78e754979c9a636978361d5.png" src="../../../_images/f2015078e04e08667d3d8067d70745c65d50224eb78e754979c9a636978361d5.png" />
 </div>
 </div>
 <p>Thus, the final call to <code class="docutils literal notranslate"><span class="pre">ax.plot()</span></code> is <code class="docutils literal notranslate"><span class="pre">ax.plot(xlim,</span> <span class="pre">ylim,</span> <span class="pre">'r--',</span> <span class="pre">linewidth=3)</span></code>.
@@ -1204,16 +1337,7 @@ capture the second returned value in <code class="docutils literal notranslate">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">23</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))[</span><span class="mi">1</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">fittedvalues</span><span class="p">,</span> <span class="n">results</span><span class="o">.</span><span class="n">resid</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Fitted value&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;subplots&#39; is not defined
-</pre></div>
-</div>
+<img alt="../../../_images/497a6f21881b064098d2d30951059c49c223037275af164e769c3c71c12a8142.png" src="../../../_images/497a6f21881b064098d2d30951059c49c223037275af164e769c3c71c12a8142.png" />
 </div>
 </div>
 <p>We add a horizontal line at 0 for reference using the
@@ -1235,16 +1359,10 @@ Leverage statistics can be computed for any number of predictors using the
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">infl</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">get_influence</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))[</span><span class="mi">1</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">infl</span><span class="o">.</span><span class="n">hat_matrix_diag</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;results&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>374
 </pre></div>
 </div>
+<img alt="../../../_images/28edce550a9f97fe43729fef30fa7717ef0d2bdfa0b05658346df0c2b907f202.png" src="../../../_images/28edce550a9f97fe43729fef30fa7717ef0d2bdfa0b05658346df0c2b907f202.png" />
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">np.argmax()</span></code>  function identifies the index of the largest element of an array, optionally computed over an axis of the array.
@@ -1270,17 +1388,55 @@ the two variables <code class="docutils literal notranslate"><span class="pre">l
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">25</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">X</span> <span class="o">=</span> <span class="n">MS</span><span class="p">([</span><span class="s1">&#39;lstat&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">Boston</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">model1</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">results1</span> <span class="o">=</span> <span class="n">model1</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;MS&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>coef</th>
+      <th>std err</th>
+      <th>t</th>
+      <th>P&gt;|t|</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>intercept</th>
+      <td>33.2228</td>
+      <td>0.731</td>
+      <td>45.458</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>lstat</th>
+      <td>-1.0321</td>
+      <td>0.048</td>
+      <td>-21.416</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>age</th>
+      <td>0.0345</td>
+      <td>0.012</td>
+      <td>2.826</td>
+      <td>0.005</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Notice how we have compacted the first line into a succinct expression describing the construction of <code class="docutils literal notranslate"><span class="pre">X</span></code>.</p>
 <p>The  <code class="docutils literal notranslate"><span class="pre">Boston</span></code>   data set contains 12 variables, and so it would be cumbersome
@@ -1294,13 +1450,9 @@ Instead, we can use the following short-hand:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">26</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">terms</span> <span class="o">=</span> <span class="n">Boston</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;medv&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">terms</span>
-
-<span class="ne">NameError</span>: name &#39;Boston&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;crim&#39;, &#39;zn&#39;, &#39;indus&#39;, &#39;chas&#39;, &#39;nox&#39;, &#39;rm&#39;, &#39;age&#39;, &#39;dis&#39;, &#39;rad&#39;, &#39;tax&#39;,
+       &#39;ptratio&#39;, &#39;lstat&#39;],
+      dtype=&#39;object&#39;)
 </pre></div>
 </div>
 </div>
@@ -1317,17 +1469,125 @@ the same model matrix builder.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">27</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">X</span> <span class="o">=</span> <span class="n">MS</span><span class="p">(</span><span class="n">terms</span><span class="p">)</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">Boston</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;MS&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>coef</th>
+      <th>std err</th>
+      <th>t</th>
+      <th>P&gt;|t|</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>intercept</th>
+      <td>41.6173</td>
+      <td>4.936</td>
+      <td>8.431</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>crim</th>
+      <td>-0.1214</td>
+      <td>0.033</td>
+      <td>-3.678</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>zn</th>
+      <td>0.0470</td>
+      <td>0.014</td>
+      <td>3.384</td>
+      <td>0.001</td>
+    </tr>
+    <tr>
+      <th>indus</th>
+      <td>0.0135</td>
+      <td>0.062</td>
+      <td>0.217</td>
+      <td>0.829</td>
+    </tr>
+    <tr>
+      <th>chas</th>
+      <td>2.8400</td>
+      <td>0.870</td>
+      <td>3.264</td>
+      <td>0.001</td>
+    </tr>
+    <tr>
+      <th>nox</th>
+      <td>-18.7580</td>
+      <td>3.851</td>
+      <td>-4.870</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>rm</th>
+      <td>3.6581</td>
+      <td>0.420</td>
+      <td>8.705</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>age</th>
+      <td>0.0036</td>
+      <td>0.013</td>
+      <td>0.271</td>
+      <td>0.787</td>
+    </tr>
+    <tr>
+      <th>dis</th>
+      <td>-1.4908</td>
+      <td>0.202</td>
+      <td>-7.394</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>rad</th>
+      <td>0.2894</td>
+      <td>0.067</td>
+      <td>4.325</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>tax</th>
+      <td>-0.0127</td>
+      <td>0.004</td>
+      <td>-3.337</td>
+      <td>0.001</td>
+    </tr>
+    <tr>
+      <th>ptratio</th>
+      <td>-0.9375</td>
+      <td>0.132</td>
+      <td>-7.091</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>lstat</th>
+      <td>-0.5520</td>
+      <td>0.051</td>
+      <td>-10.897</td>
+      <td>0.000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>What if we would like to perform a regression using all of the variables but one?  For
 example, in the above regression output,   <code class="docutils literal notranslate"><span class="pre">age</span></code>  has a high <span class="math notranslate nohighlight">\(p\)</span>-value.
@@ -1343,17 +1603,118 @@ The following syntax results in a regression using all predictors except  <code 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">28</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">minus_age</span> <span class="o">=</span> <span class="n">Boston</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;medv&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">])</span> 
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">Xma</span> <span class="o">=</span> <span class="n">MS</span><span class="p">(</span><span class="n">minus_age</span><span class="p">)</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">Boston</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">model1</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">Xma</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;Boston&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>coef</th>
+      <th>std err</th>
+      <th>t</th>
+      <th>P&gt;|t|</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>intercept</th>
+      <td>41.5251</td>
+      <td>4.920</td>
+      <td>8.441</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>crim</th>
+      <td>-0.1214</td>
+      <td>0.033</td>
+      <td>-3.683</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>zn</th>
+      <td>0.0465</td>
+      <td>0.014</td>
+      <td>3.379</td>
+      <td>0.001</td>
+    </tr>
+    <tr>
+      <th>indus</th>
+      <td>0.0135</td>
+      <td>0.062</td>
+      <td>0.217</td>
+      <td>0.829</td>
+    </tr>
+    <tr>
+      <th>chas</th>
+      <td>2.8528</td>
+      <td>0.868</td>
+      <td>3.287</td>
+      <td>0.001</td>
+    </tr>
+    <tr>
+      <th>nox</th>
+      <td>-18.4851</td>
+      <td>3.714</td>
+      <td>-4.978</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>rm</th>
+      <td>3.6811</td>
+      <td>0.411</td>
+      <td>8.951</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>dis</th>
+      <td>-1.5068</td>
+      <td>0.193</td>
+      <td>-7.825</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>rad</th>
+      <td>0.2879</td>
+      <td>0.067</td>
+      <td>4.322</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>tax</th>
+      <td>-0.0127</td>
+      <td>0.004</td>
+      <td>-3.333</td>
+      <td>0.001</td>
+    </tr>
+    <tr>
+      <th>ptratio</th>
+      <td>-0.9346</td>
+      <td>0.132</td>
+      <td>-7.099</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>lstat</th>
+      <td>-0.5474</td>
+      <td>0.048</td>
+      <td>-11.483</td>
+      <td>0.000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="multivariate-goodness-of-fit">
@@ -1390,19 +1751,79 @@ in the model matrix <code class="docutils literal notranslate"><span class="pre"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">29</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">vals</span> <span class="o">=</span> <span class="p">[</span><span class="n">VIF</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">2</span>         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">vif</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;vif&#39;</span><span class="p">:</span><span class="n">vals</span><span class="p">},</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>                    <span class="n">index</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">vif</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;X&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>vif</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>crim</th>
+      <td>1.767486</td>
+    </tr>
+    <tr>
+      <th>zn</th>
+      <td>2.298459</td>
+    </tr>
+    <tr>
+      <th>indus</th>
+      <td>3.987181</td>
+    </tr>
+    <tr>
+      <th>chas</th>
+      <td>1.071168</td>
+    </tr>
+    <tr>
+      <th>nox</th>
+      <td>4.369093</td>
+    </tr>
+    <tr>
+      <th>rm</th>
+      <td>1.912532</td>
+    </tr>
+    <tr>
+      <th>age</th>
+      <td>3.088232</td>
+    </tr>
+    <tr>
+      <th>dis</th>
+      <td>3.954037</td>
+    </tr>
+    <tr>
+      <th>rad</th>
+      <td>7.445301</td>
+    </tr>
+    <tr>
+      <th>tax</th>
+      <td>9.002158</td>
+    </tr>
+    <tr>
+      <th>ptratio</th>
+      <td>1.797060</td>
+    </tr>
+    <tr>
+      <th>lstat</th>
+      <td>2.870777</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>The function <code class="docutils literal notranslate"><span class="pre">VIF()</span></code> takes two arguments: a dataframe or array,
 and a variable column index. In the code above we call <code class="docutils literal notranslate"><span class="pre">VIF()</span></code> on the fly for all columns in <code class="docutils literal notranslate"><span class="pre">X</span></code>.<br />
@@ -1413,18 +1834,6 @@ We have excluded column 0 above (the intercept), which is not of interest. In th
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vals</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
     <span class="n">vals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">VIF</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">30</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">vals</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">vals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">VIF</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
-
-<span class="ne">NameError</span>: name &#39;X&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1449,19 +1858,62 @@ matrix builder to include an interaction term between
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">31</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">X</span> <span class="o">=</span> <span class="n">MS</span><span class="p">([</span><span class="s1">&#39;lstat&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>         <span class="s1">&#39;age&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>         <span class="p">(</span><span class="s1">&#39;lstat&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">)])</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">Boston</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">model2</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">summarize</span><span class="p">(</span><span class="n">model2</span><span class="o">.</span><span class="n">fit</span><span class="p">())</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;MS&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>coef</th>
+      <th>std err</th>
+      <th>t</th>
+      <th>P&gt;|t|</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>intercept</th>
+      <td>36.0885</td>
+      <td>1.470</td>
+      <td>24.553</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>lstat</th>
+      <td>-1.3921</td>
+      <td>0.167</td>
+      <td>-8.313</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>age</th>
+      <td>-0.0007</td>
+      <td>0.020</td>
+      <td>-0.036</td>
+      <td>0.971</td>
+    </tr>
+    <tr>
+      <th>lstat:age</th>
+      <td>0.0042</td>
+      <td>0.002</td>
+      <td>2.244</td>
+      <td>0.025</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="non-linear-transformations-of-the-predictors">
@@ -1481,17 +1933,62 @@ of its first argument are added to the model matrix.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">32</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">X</span> <span class="o">=</span> <span class="n">MS</span><span class="p">([</span><span class="n">poly</span><span class="p">(</span><span class="s1">&#39;lstat&#39;</span><span class="p">,</span> <span class="n">degree</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span> <span class="s1">&#39;age&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">Boston</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">model3</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">results3</span> <span class="o">=</span> <span class="n">model3</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;MS&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>coef</th>
+      <th>std err</th>
+      <th>t</th>
+      <th>P&gt;|t|</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>intercept</th>
+      <td>17.7151</td>
+      <td>0.781</td>
+      <td>22.681</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>poly(lstat, degree=2)[0]</th>
+      <td>-179.2279</td>
+      <td>6.733</td>
+      <td>-26.620</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>poly(lstat, degree=2)[1]</th>
+      <td>72.9908</td>
+      <td>5.482</td>
+      <td>13.315</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>age</th>
+      <td>0.0703</td>
+      <td>0.011</td>
+      <td>6.471</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>The effectively zero <em>p</em>-value associated with the quadratic term
 (i.e. the third row above) suggests that it leads to an improved model.</p>
@@ -1515,15 +2012,54 @@ superior to the linear fit.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">33</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">anova_lm</span><span class="p">(</span><span class="n">results1</span><span class="p">,</span> <span class="n">results3</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;anova_lm&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>df_resid</th>
+      <th>ssr</th>
+      <th>df_diff</th>
+      <th>ss_diff</th>
+      <th>F</th>
+      <th>Pr(&gt;F)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>503.0</td>
+      <td>19168.128609</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>502.0</td>
+      <td>14165.613251</td>
+      <td>1.0</td>
+      <td>5002.515357</td>
+      <td>177.278785</td>
+      <td>7.468491e-35</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Here <code class="docutils literal notranslate"><span class="pre">results1</span></code> represents the linear submodel containing
 predictors <code class="docutils literal notranslate"><span class="pre">lstat</span></code> and <code class="docutils literal notranslate"><span class="pre">age</span></code>,
@@ -1557,16 +2093,10 @@ there is no previous model with which to compare the first.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">34</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))[</span><span class="mi">1</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">results3</span><span class="o">.</span><span class="n">fittedvalues</span><span class="p">,</span> <span class="n">results3</span><span class="o">.</span><span class="n">resid</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Fitted value&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;subplots&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D at 0x7f336e393b80&gt;
 </pre></div>
 </div>
+<img alt="../../../_images/16eaf9c2bdb046a15065c6467a4b95e9d8b13d9120ab9c29154c329ed68ff678.png" src="../../../_images/16eaf9c2bdb046a15065c6467a4b95e9d8b13d9120ab9c29154c329ed68ff678.png" />
 </div>
 </div>
 <p>We see that when the quadratic term is included in the model,
@@ -1588,13 +2118,9 @@ predictors.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">35</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">Carseats</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="s1">&#39;Carseats&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">Carseats</span><span class="o">.</span><span class="n">columns</span>
-
-<span class="ne">NameError</span>: name &#39;load_data&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Sales&#39;, &#39;CompPrice&#39;, &#39;Income&#39;, &#39;Advertising&#39;, &#39;Population&#39;, &#39;Price&#39;,
+       &#39;ShelveLoc&#39;, &#39;Age&#39;, &#39;Education&#39;, &#39;Urban&#39;, &#39;US&#39;],
+      dtype=&#39;object&#39;)
 </pre></div>
 </div>
 </div>
@@ -1624,18 +2150,132 @@ Below we fit a multiple regression model that includes some interaction terms.</
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">36</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">allvars</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">Carseats</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Sales&#39;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Carseats</span><span class="p">[</span><span class="s1">&#39;Sales&#39;</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">final</span> <span class="o">=</span> <span class="n">allvars</span> <span class="o">+</span> <span class="p">[(</span><span class="s1">&#39;Income&#39;</span><span class="p">,</span> <span class="s1">&#39;Advertising&#39;</span><span class="p">),</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>                    <span class="p">(</span><span class="s1">&#39;Price&#39;</span><span class="p">,</span> <span class="s1">&#39;Age&#39;</span><span class="p">)]</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;Carseats&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>coef</th>
+      <th>std err</th>
+      <th>t</th>
+      <th>P&gt;|t|</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>intercept</th>
+      <td>6.5756</td>
+      <td>1.009</td>
+      <td>6.519</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>CompPrice</th>
+      <td>0.0929</td>
+      <td>0.004</td>
+      <td>22.567</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>Income</th>
+      <td>0.0109</td>
+      <td>0.003</td>
+      <td>4.183</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>Advertising</th>
+      <td>0.0702</td>
+      <td>0.023</td>
+      <td>3.107</td>
+      <td>0.002</td>
+    </tr>
+    <tr>
+      <th>Population</th>
+      <td>0.0002</td>
+      <td>0.000</td>
+      <td>0.433</td>
+      <td>0.665</td>
+    </tr>
+    <tr>
+      <th>Price</th>
+      <td>-0.1008</td>
+      <td>0.007</td>
+      <td>-13.549</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>ShelveLoc[Good]</th>
+      <td>4.8487</td>
+      <td>0.153</td>
+      <td>31.724</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>ShelveLoc[Medium]</th>
+      <td>1.9533</td>
+      <td>0.126</td>
+      <td>15.531</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>Age</th>
+      <td>-0.0579</td>
+      <td>0.016</td>
+      <td>-3.633</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>Education</th>
+      <td>-0.0209</td>
+      <td>0.020</td>
+      <td>-1.063</td>
+      <td>0.288</td>
+    </tr>
+    <tr>
+      <th>Urban[Yes]</th>
+      <td>0.1402</td>
+      <td>0.112</td>
+      <td>1.247</td>
+      <td>0.213</td>
+    </tr>
+    <tr>
+      <th>US[Yes]</th>
+      <td>-0.1576</td>
+      <td>0.149</td>
+      <td>-1.058</td>
+      <td>0.291</td>
+    </tr>
+    <tr>
+      <th>Income:Advertising</th>
+      <td>0.0008</td>
+      <td>0.000</td>
+      <td>2.698</td>
+      <td>0.007</td>
+    </tr>
+    <tr>
+      <th>Price:Age</th>
+      <td>0.0001</td>
+      <td>0.000</td>
+      <td>0.801</td>
+      <td>0.424</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>In the first line above, we made <code class="docutils literal notranslate"><span class="pre">allvars</span></code> a list, so that we
 could add the interaction terms two lines down.
