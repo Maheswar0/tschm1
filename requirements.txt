@@ -6,6 +6,9 @@ statsmodels
 scikit-learn
 torch
 torchvision
+torchmetrics
+torchinfo
+pytorch-lightning
 l0bnb
 numba
 llvmlite
