@@ -10,3 +10,6 @@
 * {download}`Chapter 8 <pdfs/Ch08_Tree_Based_Methods.pdf>`
 * {download}`Chapter 9 <pdfs/Ch09_Support_Vector_Machines.pdf>`
 * {download}`Chapter 10 <pdfs/Ch10_Deep_Learning.pdf>`
+* {download}`Chapter 11 <pdfs/Ch11_Survival_Analysis.pdf>`
+* {download}`Chapter 12 <pdfs/Ch12_Unsupervised_Learning.pdf>`
+* {download}`Chapter 13 <pdfs/Ch13_Multiple_Testing.pdf>`
