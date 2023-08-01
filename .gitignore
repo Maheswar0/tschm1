@@ -27,9 +27,7 @@ tmp
 *.vrb
 *.snm
 *.fls
-*.pdf
 *.fdb_latexmk
-dcp.pdf
 *.DS_Store
 .ipynb_checkpoints
 exercises/*_sltn.ipynb

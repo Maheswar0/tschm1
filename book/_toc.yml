@@ -8,3 +8,7 @@ parts:
       - file: docs/chapters/index
         sections:
             - glob: docs/chapters/notebooks/*
+
+      - file: docs/slides/index
+        sections:
+            - glob: docs/slides/pdfs/*
