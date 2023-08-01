@@ -7,4 +7,5 @@ ISLP
 statsmodels
 scikit-learn
 torch
+torchvision
 l0bnb
