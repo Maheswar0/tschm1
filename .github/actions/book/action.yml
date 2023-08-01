@@ -14,28 +14,48 @@ on:
 runs:
   using: "composite"
   steps:
-      - name: Set up Python 3.10
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
 
-      #  Build the book
-      - name: Build the book
-        shell: bash
-        run: |
-          make build
+    - name: Restore cache
+      id: cache-restore
+      uses: actions/cache/restore@v3
+      with:
+        path: |
+          .venv
+          book/_build/.jupyter_cache
+        key: ${{ runner.os }}-book
 
-      - uses: actions/cache@v3
-        name: Jupyter Cache
-        with:
-          path: book/_build/.jupyter_cache
-          key: ${{ runner.os }}-jupyter-${{ hashFiles('**/*') }}
-          restore-keys: |
-            ${{ runner.os }}-jupyter-
+    #- name: Load cached book execution
+    #  id: cache
+    #  uses: actions/cache/restore@v3
+    #  with:
+    #    path: book/_build/.jupyter_cache
+    #    key: ${{ runner.os }}-jupyter-${{ hashFiles('**/*') }}
 
-      # Push the book's HTML to draft
-      - name: GitHub Pages action
-        uses: JamesIves/github-pages-deploy-action@v4.4.3
-        with:
-            branch: ${{ inputs.target-branch }} # The branch the action should deploy to.
-            folder: book/_build/html # The folder the action should deploy.
+    #  Build the book
+    - name: Build the book
+      shell: bash
+      run: |
+        make build
+
+    - uses: actions/cache/save@v3
+      name: Cache
+      id: cache-save
+      with:
+        path: |
+          .venv
+          book/_build/.jupyter_cache
+        key: ${{ steps.cache-restore.outputs.cache-primary-key }}
+
+        #restore-keys: |
+        #  ${{ runner.os }}-book
+
+    # Push the book's HTML to draft
+    - name: GitHub Pages action
+      uses: JamesIves/github-pages-deploy-action@v4.4.3
+      with:
+        branch: ${{ inputs.target-branch }} # The branch the action should deploy to.
+        folder: book/_build/html # The folder the action should deploy.

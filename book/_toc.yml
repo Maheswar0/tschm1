@@ -5,10 +5,19 @@ root: docs/index
 parts:
   - caption: "Overview"
     chapters:
-      - file: docs/chapters/index
+      - file: docs/labs/index
         sections:
-            - glob: docs/chapters/notebooks/*
+          - file: docs/labs/notebooks/Ch02-statlearn-lab
+          - file: docs/labs/notebooks/Ch03-linreg-lab
+          - file: docs/labs/notebooks/Ch04-classification-lab
+          - file: docs/labs/notebooks/Ch05-resample-lab
+          - file: docs/labs/notebooks/Ch06-varselect-lab
+          - file: docs/labs/notebooks/Ch07-nonlin-lab
+          - file: docs/labs/notebooks/Ch08-baggboost-lab
+          - file: docs/labs/notebooks/Ch09-svm-lab
+          - file: docs/labs/notebooks/Ch10-deeplearning-lab
+          - file: docs/labs/notebooks/Ch11-surv-lab
+          - file: docs/labs/notebooks/Ch12-unsup-lab
+          - file: docs/labs/notebooks/Ch13-multiple-lab
 
       - file: docs/slides/index
-        sections:
-            - glob: docs/slides/pdfs/*

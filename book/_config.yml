@@ -10,11 +10,10 @@ execute:
   execute_notebooks: cache
   timeout: 1200               # 20 minutes timeout
   allow_errors: true
-  #exclude_patterns:
-    # those notebooks are extremely expensive
-    #- docs/intro/notebooks/tv_inpainting.ipynb
-    # The exercises shall not be compiled, there code is incomplete and left as an exercise
-    #- "exercises/notebooks/*.ipynb"
+  exclude_patterns:
+    # those notebooks are extremely slow
+    - docs/labs/notebooks/Ch13-multiple-lab.ipynb
+
 
 sphinx:
   config:
