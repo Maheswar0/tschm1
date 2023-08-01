@@ -1161,6 +1161,60 @@ then you could set <code class="docutils literal notranslate"><span class="pre">
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">27</span><span class="p">],</span> <span class="n">line</span> <span class="mi">15</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">B</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="n">rng</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">D_null</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">15</span>     <span class="n">ttest_</span> <span class="o">=</span> <span class="n">ttest_ind</span><span class="p">(</span><span class="n">D_null</span><span class="p">[:</span><span class="n">n_</span><span class="p">],</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span>                        <span class="n">D_null</span><span class="p">[</span><span class="n">n_</span><span class="p">:],</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span>                        <span class="n">equal_var</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span>     <span class="n">Tnull_vals</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="n">ttest_</span><span class="o">.</span><span class="n">statistic</span>
+
+<span class="nn">File ~/work/isl/isl/.venv/lib/python3.10/site-packages/scipy/stats/_axis_nan_policy.py:523,</span> in <span class="ni">_axis_nan_policy_factory.&lt;locals&gt;.axis_nan_policy_decorator.&lt;locals&gt;.axis_nan_policy_wrapper</span><span class="nt">(***failed resolving arguments***)</span>
+<span class="g g-Whitespace">    </span><span class="mi">521</span> <span class="k">if</span> <span class="n">sentinel</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">522</span>     <span class="n">samples</span> <span class="o">=</span> <span class="n">_remove_sentinel</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">paired</span><span class="p">,</span> <span class="n">sentinel</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">523</span> <span class="n">res</span> <span class="o">=</span> <span class="n">hypotest_fun_out</span><span class="p">(</span><span class="o">*</span><span class="n">samples</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">524</span> <span class="n">res</span> <span class="o">=</span> <span class="n">result_to_tuple</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">525</span> <span class="n">res</span> <span class="o">=</span> <span class="n">_add_reduced_axes</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">reduced_axes</span><span class="p">,</span> <span class="n">keepdims</span><span class="p">)</span>
+
+<span class="nn">File ~/work/isl/isl/.venv/lib/python3.10/site-packages/scipy/stats/_stats_py.py:7457,</span> in <span class="ni">ttest_ind</span><span class="nt">(a, b, axis, equal_var, nan_policy, permutations, random_state, alternative, trim)</span>
+<span class="g g-Whitespace">   </span><span class="mi">7455</span>     <span class="n">np</span><span class="o">.</span><span class="n">seterr</span><span class="p">(</span><span class="n">divide</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">invalid</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">7456</span> <span class="n">v1</span> <span class="o">=</span> <span class="n">_var</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">7457</span> <span class="n">v2</span> <span class="o">=</span> <span class="n">_var</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">7458</span> <span class="k">if</span> <span class="n">equal_var</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">7459</span>     <span class="n">np</span><span class="o">.</span><span class="n">seterr</span><span class="p">(</span><span class="o">**</span><span class="n">old_errstate</span><span class="p">)</span>
+
+<span class="nn">File ~/work/isl/isl/.venv/lib/python3.10/site-packages/scipy/stats/_stats_py.py:1100,</span> in <span class="ni">_var</span><span class="nt">(x, axis, ddof, mean)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1098</span> <span class="k">def</span> <span class="nf">_var</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1099</span>     <span class="c1"># Calculate variance of sample, warning if precision is lost</span>
+<span class="ne">-&gt; </span><span class="mi">1100</span>     <span class="n">var</span> <span class="o">=</span> <span class="n">_moment</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="n">mean</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1101</span>     <span class="k">if</span> <span class="n">ddof</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1102</span>         <span class="n">n</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">axis</span><span class="p">]</span> <span class="k">if</span> <span class="n">axis</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">x</span><span class="o">.</span><span class="n">size</span>
+
+<span class="nn">File ~/work/isl/isl/.venv/lib/python3.10/site-packages/scipy/stats/_stats_py.py:1095,</span> in <span class="ni">_moment</span><span class="nt">(a, moment, axis, mean)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1093</span>     <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1094</span>         <span class="n">s</span> <span class="o">*=</span> <span class="n">a_zero_mean</span>
+<span class="ne">-&gt; </span><span class="mi">1095</span> <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">axis</span><span class="p">)</span>
+
+<span class="nn">File ~/work/isl/isl/.venv/lib/python3.10/site-packages/numpy/core/fromnumeric.py:3504,</span> in <span class="ni">mean</span><span class="nt">(a, axis, dtype, out, keepdims, where)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3501</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3502</span>         <span class="k">return</span> <span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">3504</span> <span class="k">return</span> <span class="n">_methods</span><span class="o">.</span><span class="n">_mean</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3505</span>                       <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~/work/isl/isl/.venv/lib/python3.10/site-packages/numpy/core/_methods.py:118,</span> in <span class="ni">_mean</span><span class="nt">(a, axis, dtype, out, keepdims, where)</span>
+<span class="g g-Whitespace">    </span><span class="mi">115</span>         <span class="n">dtype</span> <span class="o">=</span> <span class="n">mu</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s1">&#39;f4&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">116</span>         <span class="n">is_float16_result</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="ne">--&gt; </span><span class="mi">118</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">umr_sum</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="n">keepdims</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="n">where</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">119</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ret</span><span class="p">,</span> <span class="n">mu</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">120</span>     <span class="k">with</span> <span class="n">_no_nep50_warning</span><span class="p">():</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
 </div>
 <p>Next, we compute the number of rejected null hypotheses <span class="math notranslate nohighlight">\(R\)</span>, the
 estimated number of false positives <span class="math notranslate nohighlight">\(\widehat{V}\)</span>, and the estimated
@@ -1196,70 +1250,12 @@ the genes whose estimated FDR is less than 0.1.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;G0097&#39;,
- &#39;G0129&#39;,
- &#39;G0182&#39;,
- &#39;G0714&#39;,
- &#39;G0812&#39;,
- &#39;G0941&#39;,
- &#39;G0982&#39;,
- &#39;G1020&#39;,
- &#39;G1022&#39;,
- &#39;G1090&#39;,
- &#39;G1320&#39;,
- &#39;G1634&#39;,
- &#39;G1697&#39;,
- &#39;G1853&#39;,
- &#39;G1854&#39;,
- &#39;G1994&#39;,
- &#39;G2017&#39;,
- &#39;G2115&#39;,
- &#39;G2193&#39;]
-</pre></div>
-</div>
-</div>
 </div>
 <p>At an FDR threshold of 0.2, more genes are selected, at the cost of having a higher expected
 proportion of false discoveries.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sorted</span><span class="p">(</span><span class="n">idx</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">T_vals</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">cutoffs</span><span class="p">[</span><span class="n">FDRs</span> <span class="o">&lt;</span> <span class="mf">0.2</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;G0097&#39;,
- &#39;G0129&#39;,
- &#39;G0158&#39;,
- &#39;G0182&#39;,
- &#39;G0242&#39;,
- &#39;G0552&#39;,
- &#39;G0679&#39;,
- &#39;G0714&#39;,
- &#39;G0751&#39;,
- &#39;G0812&#39;,
- &#39;G0908&#39;,
- &#39;G0941&#39;,
- &#39;G0982&#39;,
- &#39;G1020&#39;,
- &#39;G1022&#39;,
- &#39;G1090&#39;,
- &#39;G1240&#39;,
- &#39;G1244&#39;,
- &#39;G1320&#39;,
- &#39;G1381&#39;,
- &#39;G1514&#39;,
- &#39;G1634&#39;,
- &#39;G1697&#39;,
- &#39;G1768&#39;,
- &#39;G1853&#39;,
- &#39;G1854&#39;,
- &#39;G1907&#39;,
- &#39;G1994&#39;,
- &#39;G2017&#39;,
- &#39;G2115&#39;,
- &#39;G2193&#39;]
 </pre></div>
 </div>
 </div>
@@ -1275,9 +1271,6 @@ except that it is based on only  a subset of the genes.</p>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;False Discovery Rate&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/8c526fe81a37a41a9e65c118d57e21c1540109222f5996fcce32e79449a7c7bb.png" src="../../../_images/8c526fe81a37a41a9e65c118d57e21c1540109222f5996fcce32e79449a7c7bb.png" />
 </div>
 </div>
 </section>
