@@ -29,7 +29,7 @@ parse:
     - dollarmath
     - amsmath
   myst_substitutions:
-    book_url: https://www.cvxgrp.org/cvx_short_course
+    book_url: https://tschm.github.io/isl
 
 
 # Information about where the book exists on the web
