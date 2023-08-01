@@ -1,0 +1,2460 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Chapter 3 &#8212; Introduction to Statistical Learning</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/labs/notebooks/Ch03-linreg-lab';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Chapter 4" href="Ch04-classification-lab.html" />
+    <link rel="prev" title="Chapter 2" href="Ch02-statlearn-lab.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.jpeg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../_static/logo.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    An Introduction to Statistical Learning
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Labs</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Ch02-statlearn-lab.html">Chapter 2</a></li>
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Chapter 3</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Ch04-classification-lab.html">Chapter 4</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Ch05-resample-lab.html">Chapter 5</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Ch06-varselect-lab.html">Chapter 6</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Ch07-nonlin-lab.html">Chapter 7</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Ch08-baggboost-lab.html">Chapter 8</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Ch09-svm-lab.html">Chapter 9</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Ch10-deeplearning-lab.html">Chapter 10</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Ch11-surv-lab.html">Chapter 11</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Ch12-unsup-lab.html">Chapter 12</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Ch13-multiple-lab.html">Chapter 13</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../slides/index.html">Slides</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/tschm/isl/master?urlpath=tree/book/docs/labs/notebooks/Ch03-linreg-lab.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/tschm/isl" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/tschm/isl/edit/master/book/docs/labs/notebooks/Ch03-linreg-lab.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/tschm/isl/issues/new?title=Issue%20on%20page%20%2Fdocs/labs/notebooks/Ch03-linreg-lab.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/docs/labs/notebooks/Ch03-linreg-lab.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 3</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Chapter 3</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-linear-regression">Lab: Linear Regression</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-packages">Importing packages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#new-imports">New imports</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspecting-objects-and-namespaces">Inspecting Objects and Namespaces</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-linear-regression">Simple Linear Regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-transformations-fit-and-transform">Using Transformations: Fit and Transform</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-functions">Defining Functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-linear-regression">Multiple Linear Regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multivariate-goodness-of-fit">Multivariate Goodness of Fit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-comprehension">List Comprehension</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-terms">Interaction Terms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-transformations-of-the-predictors">Non-linear Transformations of the Predictors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qualitative-predictors">Qualitative Predictors</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-3">
+<h1>Chapter 3<a class="headerlink" href="#chapter-3" title="Permalink to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="lab-linear-regression">
+<h1>Lab: Linear Regression<a class="headerlink" href="#lab-linear-regression" title="Permalink to this heading">#</a></h1>
+<section id="importing-packages">
+<h2>Importing packages<a class="headerlink" href="#importing-packages" title="Permalink to this heading">#</a></h2>
+<p>We import our standard libraries at this top
+level.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">import</span> <span class="n">subplots</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="new-imports">
+<h3>New imports<a class="headerlink" href="#new-imports" title="Permalink to this heading">#</a></h3>
+<p>Throughout this lab we will introduce new functions and libraries. However,
+we will import them here to emphasize these are the new
+code objects in this lab. Keeping imports near the top
+of a notebook makes the code more readable, since scanning the first few
+lines tells us what libraries are used.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will provide relevant details about the
+functions below as they are needed.</p>
+<p>Besides importing whole modules, it is also possible
+to import only a few items from a given module. This
+will help keep the  <em>namespace</em> clean.
+We will use a few specific objects from the <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> package
+which we import here.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">statsmodels.stats.outliers_influence</span> \
+     <span class="kn">import</span> <span class="nn">variance_inflation_factor</span> <span class="k">as</span> <span class="nn">VIF</span>
+<span class="kn">from</span> <span class="nn">statsmodels.stats.anova</span> <span class="kn">import</span> <span class="n">anova_lm</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As one of the import statements above is quite a long line, we inserted a line break <code class="docutils literal notranslate"><span class="pre">\</span></code> to
+ease readability.</p>
+<p>We will also use some functions written for the labs in this book in the <code class="docutils literal notranslate"><span class="pre">ISLP</span></code>
+package.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ISLP</span> <span class="kn">import</span> <span class="n">load_data</span>
+<span class="kn">from</span> <span class="nn">ISLP.models</span> <span class="kn">import</span> <span class="p">(</span><span class="n">ModelSpec</span> <span class="k">as</span> <span class="n">MS</span><span class="p">,</span>
+                         <span class="n">summarize</span><span class="p">,</span>
+                         <span class="n">poly</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="inspecting-objects-and-namespaces">
+<h3>Inspecting Objects and Namespaces<a class="headerlink" href="#inspecting-objects-and-namespaces" title="Permalink to this heading">#</a></h3>
+<p>The
+function  <code class="docutils literal notranslate"><span class="pre">dir()</span></code>
+provides a list of
+objects in a namespace.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;In&#39;,
+ &#39;MS&#39;,
+ &#39;Out&#39;,
+ &#39;VIF&#39;,
+ &#39;_&#39;,
+ &#39;__&#39;,
+ &#39;___&#39;,
+ &#39;__builtin__&#39;,
+ &#39;__builtins__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__loader__&#39;,
+ &#39;__name__&#39;,
+ &#39;__package__&#39;,
+ &#39;__spec__&#39;,
+ &#39;_dh&#39;,
+ &#39;_i&#39;,
+ &#39;_i1&#39;,
+ &#39;_i2&#39;,
+ &#39;_i3&#39;,
+ &#39;_i4&#39;,
+ &#39;_i5&#39;,
+ &#39;_ih&#39;,
+ &#39;_ii&#39;,
+ &#39;_iii&#39;,
+ &#39;_oh&#39;,
+ &#39;anova_lm&#39;,
+ &#39;exit&#39;,
+ &#39;get_ipython&#39;,
+ &#39;load_data&#39;,
+ &#39;np&#39;,
+ &#39;open&#39;,
+ &#39;pd&#39;,
+ &#39;poly&#39;,
+ &#39;quit&#39;,
+ &#39;sm&#39;,
+ &#39;subplots&#39;,
+ &#39;summarize&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This shows you everything that <code class="docutils literal notranslate"><span class="pre">Python</span></code> can find at the top level.
+There are certain objects like <code class="docutils literal notranslate"><span class="pre">__builtins__</span></code> that contain references to built-in
+functions like <code class="docutils literal notranslate"><span class="pre">print()</span></code>.</p>
+<p>Every python object has its own notion of
+namespace, also accessible with <code class="docutils literal notranslate"><span class="pre">dir()</span></code>. This will include
+both the attributes of the object
+as well as any methods associated with it. For instance, we see <code class="docutils literal notranslate"><span class="pre">'sum'</span></code> in the listing for an
+array.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">11</span><span class="p">])</span>
+<span class="nb">dir</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;T&#39;,
+ &#39;__abs__&#39;,
+ &#39;__add__&#39;,
+ &#39;__and__&#39;,
+ &#39;__array__&#39;,
+ &#39;__array_finalize__&#39;,
+ &#39;__array_function__&#39;,
+ &#39;__array_interface__&#39;,
+ &#39;__array_prepare__&#39;,
+ &#39;__array_priority__&#39;,
+ &#39;__array_struct__&#39;,
+ &#39;__array_ufunc__&#39;,
+ &#39;__array_wrap__&#39;,
+ &#39;__bool__&#39;,
+ &#39;__class__&#39;,
+ &#39;__class_getitem__&#39;,
+ &#39;__complex__&#39;,
+ &#39;__contains__&#39;,
+ &#39;__copy__&#39;,
+ &#39;__deepcopy__&#39;,
+ &#39;__delattr__&#39;,
+ &#39;__delitem__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__divmod__&#39;,
+ &#39;__dlpack__&#39;,
+ &#39;__dlpack_device__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__eq__&#39;,
+ &#39;__float__&#39;,
+ &#39;__floordiv__&#39;,
+ &#39;__format__&#39;,
+ &#39;__ge__&#39;,
+ &#39;__getattribute__&#39;,
+ &#39;__getitem__&#39;,
+ &#39;__gt__&#39;,
+ &#39;__hash__&#39;,
+ &#39;__iadd__&#39;,
+ &#39;__iand__&#39;,
+ &#39;__ifloordiv__&#39;,
+ &#39;__ilshift__&#39;,
+ &#39;__imatmul__&#39;,
+ &#39;__imod__&#39;,
+ &#39;__imul__&#39;,
+ &#39;__index__&#39;,
+ &#39;__init__&#39;,
+ &#39;__init_subclass__&#39;,
+ &#39;__int__&#39;,
+ &#39;__invert__&#39;,
+ &#39;__ior__&#39;,
+ &#39;__ipow__&#39;,
+ &#39;__irshift__&#39;,
+ &#39;__isub__&#39;,
+ &#39;__iter__&#39;,
+ &#39;__itruediv__&#39;,
+ &#39;__ixor__&#39;,
+ &#39;__le__&#39;,
+ &#39;__len__&#39;,
+ &#39;__lshift__&#39;,
+ &#39;__lt__&#39;,
+ &#39;__matmul__&#39;,
+ &#39;__mod__&#39;,
+ &#39;__mul__&#39;,
+ &#39;__ne__&#39;,
+ &#39;__neg__&#39;,
+ &#39;__new__&#39;,
+ &#39;__or__&#39;,
+ &#39;__pos__&#39;,
+ &#39;__pow__&#39;,
+ &#39;__radd__&#39;,
+ &#39;__rand__&#39;,
+ &#39;__rdivmod__&#39;,
+ &#39;__reduce__&#39;,
+ &#39;__reduce_ex__&#39;,
+ &#39;__repr__&#39;,
+ &#39;__rfloordiv__&#39;,
+ &#39;__rlshift__&#39;,
+ &#39;__rmatmul__&#39;,
+ &#39;__rmod__&#39;,
+ &#39;__rmul__&#39;,
+ &#39;__ror__&#39;,
+ &#39;__rpow__&#39;,
+ &#39;__rrshift__&#39;,
+ &#39;__rshift__&#39;,
+ &#39;__rsub__&#39;,
+ &#39;__rtruediv__&#39;,
+ &#39;__rxor__&#39;,
+ &#39;__setattr__&#39;,
+ &#39;__setitem__&#39;,
+ &#39;__setstate__&#39;,
+ &#39;__sizeof__&#39;,
+ &#39;__str__&#39;,
+ &#39;__sub__&#39;,
+ &#39;__subclasshook__&#39;,
+ &#39;__truediv__&#39;,
+ &#39;__xor__&#39;,
+ &#39;all&#39;,
+ &#39;any&#39;,
+ &#39;argmax&#39;,
+ &#39;argmin&#39;,
+ &#39;argpartition&#39;,
+ &#39;argsort&#39;,
+ &#39;astype&#39;,
+ &#39;base&#39;,
+ &#39;byteswap&#39;,
+ &#39;choose&#39;,
+ &#39;clip&#39;,
+ &#39;compress&#39;,
+ &#39;conj&#39;,
+ &#39;conjugate&#39;,
+ &#39;copy&#39;,
+ &#39;ctypes&#39;,
+ &#39;cumprod&#39;,
+ &#39;cumsum&#39;,
+ &#39;data&#39;,
+ &#39;diagonal&#39;,
+ &#39;dot&#39;,
+ &#39;dtype&#39;,
+ &#39;dump&#39;,
+ &#39;dumps&#39;,
+ &#39;fill&#39;,
+ &#39;flags&#39;,
+ &#39;flat&#39;,
+ &#39;flatten&#39;,
+ &#39;getfield&#39;,
+ &#39;imag&#39;,
+ &#39;item&#39;,
+ &#39;itemset&#39;,
+ &#39;itemsize&#39;,
+ &#39;max&#39;,
+ &#39;mean&#39;,
+ &#39;min&#39;,
+ &#39;nbytes&#39;,
+ &#39;ndim&#39;,
+ &#39;newbyteorder&#39;,
+ &#39;nonzero&#39;,
+ &#39;partition&#39;,
+ &#39;prod&#39;,
+ &#39;ptp&#39;,
+ &#39;put&#39;,
+ &#39;ravel&#39;,
+ &#39;real&#39;,
+ &#39;repeat&#39;,
+ &#39;reshape&#39;,
+ &#39;resize&#39;,
+ &#39;round&#39;,
+ &#39;searchsorted&#39;,
+ &#39;setfield&#39;,
+ &#39;setflags&#39;,
+ &#39;shape&#39;,
+ &#39;size&#39;,
+ &#39;sort&#39;,
+ &#39;squeeze&#39;,
+ &#39;std&#39;,
+ &#39;strides&#39;,
+ &#39;sum&#39;,
+ &#39;swapaxes&#39;,
+ &#39;take&#39;,
+ &#39;tobytes&#39;,
+ &#39;tofile&#39;,
+ &#39;tolist&#39;,
+ &#39;tostring&#39;,
+ &#39;trace&#39;,
+ &#39;transpose&#39;,
+ &#39;var&#39;,
+ &#39;view&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This indicates that the object <code class="docutils literal notranslate"><span class="pre">A.sum</span></code> exists. In this case it is a method
+that can be used to compute the sum of the array <code class="docutils literal notranslate"><span class="pre">A</span></code> as can be seen by typing <code class="docutils literal notranslate"><span class="pre">A.sum?</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="simple-linear-regression">
+<h2>Simple Linear Regression<a class="headerlink" href="#simple-linear-regression" title="Permalink to this heading">#</a></h2>
+<p>In this section we will  construct model
+matrices (also called design matrices) using the <code class="docutils literal notranslate"><span class="pre">ModelSpec()</span></code>  transform from <code class="docutils literal notranslate"><span class="pre">ISLP.models</span></code>.</p>
+<p>We  will use the <code class="docutils literal notranslate"><span class="pre">Boston</span></code> housing data set, which is contained in the <code class="docutils literal notranslate"><span class="pre">ISLP</span></code> package.  The <code class="docutils literal notranslate"><span class="pre">Boston</span></code> dataset records  <code class="docutils literal notranslate"><span class="pre">medv</span></code>  (median house value) for <span class="math notranslate nohighlight">\(506\)</span> neighborhoods
+around Boston.  We will build a regression model to predict  <code class="docutils literal notranslate"><span class="pre">medv</span></code>  using <span class="math notranslate nohighlight">\(13\)</span>
+predictors such as  <code class="docutils literal notranslate"><span class="pre">rmvar</span></code>  (average number of rooms per house),
+<code class="docutils literal notranslate"><span class="pre">age</span></code>  (proportion of owner-occupied units built prior to 1940), and  <code class="docutils literal notranslate"><span class="pre">lstat</span></code>  (percent of
+households with low socioeconomic status).  We will use <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> for this
+task, a <code class="docutils literal notranslate"><span class="pre">Python</span></code> package that implements several commonly used
+regression methods.</p>
+<p>We have included a simple loading function <code class="docutils literal notranslate"><span class="pre">load_data()</span></code> in the
+<code class="docutils literal notranslate"><span class="pre">ISLP</span></code> package:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Boston</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="s2">&quot;Boston&quot;</span><span class="p">)</span>
+<span class="n">Boston</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;crim&#39;, &#39;zn&#39;, &#39;indus&#39;, &#39;chas&#39;, &#39;nox&#39;, &#39;rm&#39;, &#39;age&#39;, &#39;dis&#39;, &#39;rad&#39;, &#39;tax&#39;,
+       &#39;ptratio&#39;, &#39;lstat&#39;, &#39;medv&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Type <code class="docutils literal notranslate"><span class="pre">Boston?</span></code> to find out more about these data.</p>
+<p>We start by using the <code class="docutils literal notranslate"><span class="pre">sm.OLS()</span></code>  function to fit a
+simple linear regression model.  Our response will be
+<code class="docutils literal notranslate"><span class="pre">medv</span></code>  and  <code class="docutils literal notranslate"><span class="pre">lstat</span></code>  will be the single predictor.
+For this model, we can create the model matrix by hand.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;intercept&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">Boston</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+                  <span class="s1">&#39;lstat&#39;</span><span class="p">:</span> <span class="n">Boston</span><span class="p">[</span><span class="s1">&#39;lstat&#39;</span><span class="p">]})</span>
+<span class="n">X</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>intercept</th>
+      <th>lstat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>4.98</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.0</td>
+      <td>9.14</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.0</td>
+      <td>4.03</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.0</td>
+      <td>2.94</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We extract the response, and fit the model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">Boston</span><span class="p">[</span><span class="s1">&#39;medv&#39;</span><span class="p">]</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">sm.OLS()</span></code> does
+not fit the model; it specifies the model, and then <code class="docutils literal notranslate"><span class="pre">model.fit()</span></code> does the actual fitting.</p>
+<p>Our <code class="docutils literal notranslate"><span class="pre">ISLP</span></code> function <code class="docutils literal notranslate"><span class="pre">summarize()</span></code> produces a simple table of the parameter estimates,
+their standard errors, t-statistics and p-values.
+The function takes a single argument, such as the object <code class="docutils literal notranslate"><span class="pre">results</span></code>
+returned here by the <code class="docutils literal notranslate"><span class="pre">fit</span></code>
+method, and returns such a summary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summarize</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>coef</th>
+      <th>std err</th>
+      <th>t</th>
+      <th>P&gt;|t|</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>intercept</th>
+      <td>34.5538</td>
+      <td>0.563</td>
+      <td>61.415</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>lstat</th>
+      <td>-0.9500</td>
+      <td>0.039</td>
+      <td>-24.528</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Before we describe other methods for working with fitted models, we outline a more useful and general framework for constructing a model matrix~<code class="docutils literal notranslate"><span class="pre">X</span></code>.</p>
+<section id="using-transformations-fit-and-transform">
+<h3>Using Transformations: Fit and Transform<a class="headerlink" href="#using-transformations-fit-and-transform" title="Permalink to this heading">#</a></h3>
+<p>Our model above has a single predictor, and constructing <code class="docutils literal notranslate"><span class="pre">X</span></code> was straightforward.
+In practice  we often fit models with more than one predictor, typically selected from an array or data frame.
+We may wish to introduce transformations to the variables before fitting the model, specify interactions between variables, and expand some particular variables into sets of variables (e.g. polynomials).
+The <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>  package has a particular notion
+for this type of task: a <em>transform</em>. A transform is an object
+that is created with some parameters as arguments. The
+object has two main methods: <code class="docutils literal notranslate"><span class="pre">fit()</span></code> and <code class="docutils literal notranslate"><span class="pre">transform()</span></code>.</p>
+<p>We provide a general approach for specifying models and constructing
+the model matrix through the transform <code class="docutils literal notranslate"><span class="pre">ModelSpec()</span></code> in the <code class="docutils literal notranslate"><span class="pre">ISLP</span></code> library.
+<code class="docutils literal notranslate"><span class="pre">ModelSpec()</span></code>
+(renamed <code class="docutils literal notranslate"><span class="pre">MS()</span></code> in the preamble) creates a
+transform object, and then a pair of methods
+<code class="docutils literal notranslate"><span class="pre">transform()</span></code> and <code class="docutils literal notranslate"><span class="pre">fit()</span></code> are used to construct a
+corresponding model matrix.</p>
+<p>We first describe this process for our simple regression model  using a single predictor <code class="docutils literal notranslate"><span class="pre">lstat</span></code> in
+the <code class="docutils literal notranslate"><span class="pre">Boston</span></code> data frame, but will use it repeatedly in more
+complex tasks in this and other labs in this book.
+In our case the transform is created by the expression
+<code class="docutils literal notranslate"><span class="pre">design</span> <span class="pre">=</span> <span class="pre">MS(['lstat'])</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">fit()</span></code>  method takes the original array and may do some
+initial computations on it, as specified in the transform object.
+For example, it may compute means and standard deviations for centering and scaling.
+The <code class="docutils literal notranslate"><span class="pre">transform()</span></code>
+method applies the fitted transformation to the array of data, and produces the model matrix.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">design</span> <span class="o">=</span> <span class="n">MS</span><span class="p">([</span><span class="s1">&#39;lstat&#39;</span><span class="p">])</span>
+<span class="n">design</span> <span class="o">=</span> <span class="n">design</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">Boston</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">design</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">Boston</span><span class="p">)</span>
+<span class="n">X</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>intercept</th>
+      <th>lstat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>4.98</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.0</td>
+      <td>9.14</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.0</td>
+      <td>4.03</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.0</td>
+      <td>2.94</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>In this simple case, the <code class="docutils literal notranslate"><span class="pre">fit()</span></code>  method does very little; it simply checks that the variable <code class="docutils literal notranslate"><span class="pre">'lstat'</span></code> specified in <code class="docutils literal notranslate"><span class="pre">design</span></code> exists in <code class="docutils literal notranslate"><span class="pre">Boston</span></code>. Then <code class="docutils literal notranslate"><span class="pre">transform()</span></code> constructs the model matrix with two columns: an <code class="docutils literal notranslate"><span class="pre">intercept</span></code> and the variable <code class="docutils literal notranslate"><span class="pre">lstat</span></code>.</p>
+<p>These two operations can be  combined with the
+<code class="docutils literal notranslate"><span class="pre">fit_transform()</span></code>  method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">design</span> <span class="o">=</span> <span class="n">MS</span><span class="p">([</span><span class="s1">&#39;lstat&#39;</span><span class="p">])</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">design</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">Boston</span><span class="p">)</span>
+<span class="n">X</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>intercept</th>
+      <th>lstat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>4.98</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.0</td>
+      <td>9.14</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.0</td>
+      <td>4.03</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.0</td>
+      <td>2.94</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Note that, as in the previous code chunk when the two steps were done separately, the <code class="docutils literal notranslate"><span class="pre">design</span></code> object is changed as a result of the <code class="docutils literal notranslate"><span class="pre">fit()</span></code> operation. The power of this pipeline will become clearer when we fit more complex models that involve interactions and transformations.</p>
+<p>Let’s return to our fitted regression model.
+The object
+<code class="docutils literal notranslate"><span class="pre">results</span></code> has several methods that can be used for inference.
+We already presented a function <code class="docutils literal notranslate"><span class="pre">summarize()</span></code> for showing the essentials of the fit.
+For a full and somewhat exhaustive summary of the fit, we can use the <code class="docutils literal notranslate"><span class="pre">summary()</span></code>
+method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>          <td>medv</td>       <th>  R-squared:         </th> <td>   0.544</td>
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.543</td>
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   601.6</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Tue, 01 Aug 2023</td> <th>  Prob (F-statistic):</th> <td>5.08e-88</td>
+</tr>
+<tr>
+  <th>Time:</th>                 <td>02:54:26</td>     <th>  Log-Likelihood:    </th> <td> -1641.5</td>
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>   506</td>      <th>  AIC:               </th> <td>   3287.</td>
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>   504</td>      <th>  BIC:               </th> <td>   3295.</td>
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     1</td>      <th>                     </th>     <td> </td>   
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>   
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+      <td></td>         <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>intercept</th> <td>   34.5538</td> <td>    0.563</td> <td>   61.415</td> <td> 0.000</td> <td>   33.448</td> <td>   35.659</td>
+</tr>
+<tr>
+  <th>lstat</th>     <td>   -0.9500</td> <td>    0.039</td> <td>  -24.528</td> <td> 0.000</td> <td>   -1.026</td> <td>   -0.874</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td>137.043</td> <th>  Durbin-Watson:     </th> <td>   0.892</td>
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.000</td>  <th>  Jarque-Bera (JB):  </th> <td> 291.373</td>
+</tr>
+<tr>
+  <th>Skew:</th>          <td> 1.453</td>  <th>  Prob(JB):          </th> <td>5.36e-64</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 5.319</td>  <th>  Cond. No.          </th> <td>    29.7</td>
+</tr>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
+</div>
+<p>The fitted coefficients can also be retrieved as the
+<code class="docutils literal notranslate"><span class="pre">params</span></code> attribute of <code class="docutils literal notranslate"><span class="pre">results</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="o">.</span><span class="n">params</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>intercept    34.553841
+lstat        -0.950049
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">get_prediction()</span></code>  method can be used to obtain predictions, and produce confidence intervals and
+prediction intervals for the prediction of  <code class="docutils literal notranslate"><span class="pre">medv</span></code>  for  given values of  <code class="docutils literal notranslate"><span class="pre">lstat</span></code>.</p>
+<p>We first create a new data frame, in this case containing only the variable <code class="docutils literal notranslate"><span class="pre">lstat</span></code>, with the values for this variable at which we wish to make predictions.
+We then use the <code class="docutils literal notranslate"><span class="pre">transform()</span></code> method of <code class="docutils literal notranslate"><span class="pre">design</span></code> to create the corresponding model matrix.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;lstat&#39;</span><span class="p">:[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">]})</span>
+<span class="n">newX</span> <span class="o">=</span> <span class="n">design</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">new_df</span><span class="p">)</span>
+<span class="n">newX</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>intercept</th>
+      <th>lstat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.0</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.0</td>
+      <td>15</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Next we compute the predictions at <code class="docutils literal notranslate"><span class="pre">newX</span></code>, and view them by extracting the <code class="docutils literal notranslate"><span class="pre">predicted_mean</span></code> attribute.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_predictions</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">get_prediction</span><span class="p">(</span><span class="n">newX</span><span class="p">);</span>
+<span class="n">new_predictions</span><span class="o">.</span><span class="n">predicted_mean</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([29.80359411, 25.05334734, 20.30310057])
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can produce confidence intervals for the predicted values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_predictions</span><span class="o">.</span><span class="n">conf_int</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[29.00741194, 30.59977628],
+       [24.47413202, 25.63256267],
+       [19.73158815, 20.87461299]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Prediction intervals are computing by setting <code class="docutils literal notranslate"><span class="pre">obs=True</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_predictions</span><span class="o">.</span><span class="n">conf_int</span><span class="p">(</span><span class="n">obs</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[17.56567478, 42.04151344],
+       [12.82762635, 37.27906833],
+       [ 8.0777421 , 32.52845905]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>For instance, the 95% confidence interval associated with an
+<code class="docutils literal notranslate"><span class="pre">lstat</span></code>  value of 10 is (24.47, 25.63), and the 95% prediction
+interval is (12.82, 37.28).  As expected, the confidence and
+prediction intervals are centered around the same point (a predicted
+value of 25.05 for  <code class="docutils literal notranslate"><span class="pre">medv</span></code>  when  <code class="docutils literal notranslate"><span class="pre">lstat</span></code>  equals
+10), but the latter are substantially wider.</p>
+<p>Next we will plot  <code class="docutils literal notranslate"><span class="pre">medv</span></code>  and  <code class="docutils literal notranslate"><span class="pre">lstat</span></code>
+using <code class="docutils literal notranslate"><span class="pre">DataFrame.plot.scatter()</span></code>,
+and wish to
+add the regression line to the resulting plot.</p>
+</section>
+<section id="defining-functions">
+<h3>Defining Functions<a class="headerlink" href="#defining-functions" title="Permalink to this heading">#</a></h3>
+<p>While there is a function
+within the <code class="docutils literal notranslate"><span class="pre">ISLP</span></code> package that adds a line to an existing plot, we take this opportunity
+to define our first function to do so.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">abline</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+    <span class="s2">&quot;Add a line with slope m and intercept b to ax&quot;</span>
+    <span class="n">xlim</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_xlim</span><span class="p">()</span>
+    <span class="n">ylim</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span> <span class="o">*</span> <span class="n">xlim</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="n">m</span> <span class="o">*</span> <span class="n">xlim</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xlim</span><span class="p">,</span> <span class="n">ylim</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A few things are illustrated above. First we see the syntax for defining a function:
+<code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">funcname(...)</span></code>. The function has arguments <code class="docutils literal notranslate"><span class="pre">ax,</span> <span class="pre">b,</span> <span class="pre">m</span></code>
+where <code class="docutils literal notranslate"><span class="pre">ax</span></code> is an axis object for an exisiting plot, <code class="docutils literal notranslate"><span class="pre">b</span></code> is the intercept and
+<code class="docutils literal notranslate"><span class="pre">m</span></code> is the slope of the desired line. Other plotting  options can be passed on to
+<code class="docutils literal notranslate"><span class="pre">ax.plot</span></code> by including additional optional arguments as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">abline</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="s2">&quot;Add a line with slope m and intercept b to ax&quot;</span>
+    <span class="n">xlim</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_xlim</span><span class="p">()</span>
+    <span class="n">ylim</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span> <span class="o">*</span> <span class="n">xlim</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="n">m</span> <span class="o">*</span> <span class="n">xlim</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xlim</span><span class="p">,</span> <span class="n">ylim</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The addition of <code class="docutils literal notranslate"><span class="pre">*args</span></code> allows any number of
+non-named arguments to <code class="docutils literal notranslate"><span class="pre">abline</span></code>, while <code class="docutils literal notranslate"><span class="pre">*kwargs</span></code> allows any
+number of named arguments (such as <code class="docutils literal notranslate"><span class="pre">linewidth=3</span></code>) to <code class="docutils literal notranslate"><span class="pre">abline</span></code>.
+In our function, we pass
+these arguments verbatim to <code class="docutils literal notranslate"><span class="pre">ax.plot</span></code> above. Readers
+interested in learning more about
+functions are referred to the section on
+defining functions in <a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html#defining-functions">docs.python.org/tutorial</a>.</p>
+<p>Let’s use our new function to add this regression line to a plot of
+<code class="docutils literal notranslate"><span class="pre">medv</span></code> vs. <code class="docutils literal notranslate"><span class="pre">lstat</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">Boston</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;lstat&#39;</span><span class="p">,</span> <span class="s1">&#39;medv&#39;</span><span class="p">)</span>
+<span class="n">abline</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span>
+       <span class="n">results</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+       <span class="n">results</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+       <span class="s1">&#39;r--&#39;</span><span class="p">,</span>
+       <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/f2015078e04e08667d3d8067d70745c65d50224eb78e754979c9a636978361d5.png" src="../../../_images/f2015078e04e08667d3d8067d70745c65d50224eb78e754979c9a636978361d5.png" />
+</div>
+</div>
+<p>Thus, the final call to <code class="docutils literal notranslate"><span class="pre">ax.plot()</span></code> is <code class="docutils literal notranslate"><span class="pre">ax.plot(xlim,</span> <span class="pre">ylim,</span> <span class="pre">'r--',</span> <span class="pre">linewidth=3)</span></code>.
+We have used the argument <code class="docutils literal notranslate"><span class="pre">'r--'</span></code> to produce a red dashed line, and added
+an argument to make it of width 3.
+There is some evidence for non-linearity in the relationship between  <code class="docutils literal notranslate"><span class="pre">lstat</span></code>  and  <code class="docutils literal notranslate"><span class="pre">medv</span></code>. We will explore this issue later in this lab.</p>
+<p>As mentioned above, there is an existing function to add a line to a plot — <code class="docutils literal notranslate"><span class="pre">ax.axline()</span></code> — but knowing how to write such functions empowers us to create more expressive displays.</p>
+<p>Next we examine some diagnostic plots, several of which were discussed
+in Section 3.3.3.
+We can find the fitted values and residuals
+of the fit as attributes of the <code class="docutils literal notranslate"><span class="pre">results</span></code> object.
+Various influence measures describing the regression model
+are computed with the <code class="docutils literal notranslate"><span class="pre">get_influence()</span></code> method.
+As we will not use the <code class="docutils literal notranslate"><span class="pre">fig</span></code> component returned
+as the first value from <code class="docutils literal notranslate"><span class="pre">subplots()</span></code>, we simply
+capture the second returned value in <code class="docutils literal notranslate"><span class="pre">ax</span></code> below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">fittedvalues</span><span class="p">,</span> <span class="n">results</span><span class="o">.</span><span class="n">resid</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Fitted value&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Residual&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/497a6f21881b064098d2d30951059c49c223037275af164e769c3c71c12a8142.png" src="../../../_images/497a6f21881b064098d2d30951059c49c223037275af164e769c3c71c12a8142.png" />
+</div>
+</div>
+<p>We add a horizontal line at 0 for reference using the
+<code class="docutils literal notranslate"><span class="pre">ax.axhline()</span></code>   method, indicating
+it should be black (<code class="docutils literal notranslate"><span class="pre">c='k'</span></code>) and have a dashed linestyle (<code class="docutils literal notranslate"><span class="pre">ls='--'</span></code>).</p>
+<p>On the basis of the residual plot, there is some evidence of non-linearity.
+Leverage statistics can be computed for any number of predictors using the
+<code class="docutils literal notranslate"><span class="pre">hat_matrix_diag</span></code> attribute of the value returned by the
+<code class="docutils literal notranslate"><span class="pre">get_influence()</span></code>  method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">infl</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">get_influence</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">infl</span><span class="o">.</span><span class="n">hat_matrix_diag</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Index&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Leverage&#39;</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">infl</span><span class="o">.</span><span class="n">hat_matrix_diag</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>374
+</pre></div>
+</div>
+<img alt="../../../_images/28edce550a9f97fe43729fef30fa7717ef0d2bdfa0b05658346df0c2b907f202.png" src="../../../_images/28edce550a9f97fe43729fef30fa7717ef0d2bdfa0b05658346df0c2b907f202.png" />
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">np.argmax()</span></code>  function identifies the index of the largest element of an array, optionally computed over an axis of the array.
+In this case, we maximized over the entire array
+to determine which observation has the largest leverage statistic.</p>
+</section>
+</section>
+<section id="multiple-linear-regression">
+<h2>Multiple Linear Regression<a class="headerlink" href="#multiple-linear-regression" title="Permalink to this heading">#</a></h2>
+<p>In order to fit a multiple linear regression model using least squares, we again use
+the <code class="docutils literal notranslate"><span class="pre">ModelSpec()</span></code>  transform to construct the required
+model matrix and response. The arguments
+to <code class="docutils literal notranslate"><span class="pre">ModelSpec()</span></code> can be quite general, but in this case
+a list of column names suffice. We consider a fit here with
+the two variables <code class="docutils literal notranslate"><span class="pre">lstat</span></code> and <code class="docutils literal notranslate"><span class="pre">age</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">MS</span><span class="p">([</span><span class="s1">&#39;lstat&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">Boston</span><span class="p">)</span>
+<span class="n">model1</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<span class="n">results1</span> <span class="o">=</span> <span class="n">model1</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">summarize</span><span class="p">(</span><span class="n">results1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>coef</th>
+      <th>std err</th>
+      <th>t</th>
+      <th>P&gt;|t|</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>intercept</th>
+      <td>33.2228</td>
+      <td>0.731</td>
+      <td>45.458</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>lstat</th>
+      <td>-1.0321</td>
+      <td>0.048</td>
+      <td>-21.416</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>age</th>
+      <td>0.0345</td>
+      <td>0.012</td>
+      <td>2.826</td>
+      <td>0.005</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Notice how we have compacted the first line into a succinct expression describing the construction of <code class="docutils literal notranslate"><span class="pre">X</span></code>.</p>
+<p>The  <code class="docutils literal notranslate"><span class="pre">Boston</span></code>   data set contains 12 variables, and so it would be cumbersome
+to have to type all of these in order to perform a regression using all of the predictors.
+Instead, we can use the following short-hand:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">terms</span> <span class="o">=</span> <span class="n">Boston</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;medv&#39;</span><span class="p">)</span>
+<span class="n">terms</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;crim&#39;, &#39;zn&#39;, &#39;indus&#39;, &#39;chas&#39;, &#39;nox&#39;, &#39;rm&#39;, &#39;age&#39;, &#39;dis&#39;, &#39;rad&#39;, &#39;tax&#39;,
+       &#39;ptratio&#39;, &#39;lstat&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can now fit the model with all the variables in <code class="docutils literal notranslate"><span class="pre">terms</span></code> using
+the same model matrix builder.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">MS</span><span class="p">(</span><span class="n">terms</span><span class="p">)</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">Boston</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">summarize</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>coef</th>
+      <th>std err</th>
+      <th>t</th>
+      <th>P&gt;|t|</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>intercept</th>
+      <td>41.6173</td>
+      <td>4.936</td>
+      <td>8.431</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>crim</th>
+      <td>-0.1214</td>
+      <td>0.033</td>
+      <td>-3.678</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>zn</th>
+      <td>0.0470</td>
+      <td>0.014</td>
+      <td>3.384</td>
+      <td>0.001</td>
+    </tr>
+    <tr>
+      <th>indus</th>
+      <td>0.0135</td>
+      <td>0.062</td>
+      <td>0.217</td>
+      <td>0.829</td>
+    </tr>
+    <tr>
+      <th>chas</th>
+      <td>2.8400</td>
+      <td>0.870</td>
+      <td>3.264</td>
+      <td>0.001</td>
+    </tr>
+    <tr>
+      <th>nox</th>
+      <td>-18.7580</td>
+      <td>3.851</td>
+      <td>-4.870</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>rm</th>
+      <td>3.6581</td>
+      <td>0.420</td>
+      <td>8.705</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>age</th>
+      <td>0.0036</td>
+      <td>0.013</td>
+      <td>0.271</td>
+      <td>0.787</td>
+    </tr>
+    <tr>
+      <th>dis</th>
+      <td>-1.4908</td>
+      <td>0.202</td>
+      <td>-7.394</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>rad</th>
+      <td>0.2894</td>
+      <td>0.067</td>
+      <td>4.325</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>tax</th>
+      <td>-0.0127</td>
+      <td>0.004</td>
+      <td>-3.337</td>
+      <td>0.001</td>
+    </tr>
+    <tr>
+      <th>ptratio</th>
+      <td>-0.9375</td>
+      <td>0.132</td>
+      <td>-7.091</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>lstat</th>
+      <td>-0.5520</td>
+      <td>0.051</td>
+      <td>-10.897</td>
+      <td>0.000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>What if we would like to perform a regression using all of the variables but one?  For
+example, in the above regression output,   <code class="docutils literal notranslate"><span class="pre">age</span></code>  has a high <span class="math notranslate nohighlight">\(p\)</span>-value.
+So we may wish to run a regression excluding this predictor.
+The following syntax results in a regression using all predictors except  <code class="docutils literal notranslate"><span class="pre">age</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">minus_age</span> <span class="o">=</span> <span class="n">Boston</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;medv&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">])</span> 
+<span class="n">Xma</span> <span class="o">=</span> <span class="n">MS</span><span class="p">(</span><span class="n">minus_age</span><span class="p">)</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">Boston</span><span class="p">)</span>
+<span class="n">model1</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">Xma</span><span class="p">)</span>
+<span class="n">summarize</span><span class="p">(</span><span class="n">model1</span><span class="o">.</span><span class="n">fit</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>coef</th>
+      <th>std err</th>
+      <th>t</th>
+      <th>P&gt;|t|</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>intercept</th>
+      <td>41.5251</td>
+      <td>4.920</td>
+      <td>8.441</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>crim</th>
+      <td>-0.1214</td>
+      <td>0.033</td>
+      <td>-3.683</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>zn</th>
+      <td>0.0465</td>
+      <td>0.014</td>
+      <td>3.379</td>
+      <td>0.001</td>
+    </tr>
+    <tr>
+      <th>indus</th>
+      <td>0.0135</td>
+      <td>0.062</td>
+      <td>0.217</td>
+      <td>0.829</td>
+    </tr>
+    <tr>
+      <th>chas</th>
+      <td>2.8528</td>
+      <td>0.868</td>
+      <td>3.287</td>
+      <td>0.001</td>
+    </tr>
+    <tr>
+      <th>nox</th>
+      <td>-18.4851</td>
+      <td>3.714</td>
+      <td>-4.978</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>rm</th>
+      <td>3.6811</td>
+      <td>0.411</td>
+      <td>8.951</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>dis</th>
+      <td>-1.5068</td>
+      <td>0.193</td>
+      <td>-7.825</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>rad</th>
+      <td>0.2879</td>
+      <td>0.067</td>
+      <td>4.322</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>tax</th>
+      <td>-0.0127</td>
+      <td>0.004</td>
+      <td>-3.333</td>
+      <td>0.001</td>
+    </tr>
+    <tr>
+      <th>ptratio</th>
+      <td>-0.9346</td>
+      <td>0.132</td>
+      <td>-7.099</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>lstat</th>
+      <td>-0.5474</td>
+      <td>0.048</td>
+      <td>-11.483</td>
+      <td>0.000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="multivariate-goodness-of-fit">
+<h2>Multivariate Goodness of Fit<a class="headerlink" href="#multivariate-goodness-of-fit" title="Permalink to this heading">#</a></h2>
+<p>We can access the individual components of <code class="docutils literal notranslate"><span class="pre">results</span></code> by name
+(<code class="docutils literal notranslate"><span class="pre">dir(results)</span></code> shows us what is available). Hence
+<code class="docutils literal notranslate"><span class="pre">results.rsquared</span></code> gives us the <span class="math notranslate nohighlight">\(R^2\)</span>,
+and
+<code class="docutils literal notranslate"><span class="pre">np.sqrt(results.scale)</span></code> gives us the RSE.</p>
+<p>Variance inflation factors (section 3.3.3) are sometimes useful
+to assess the effect of collinearity in the model matrix of a regression model.
+We will compute the VIFs in our multiple regression fit, and use the opportunity to introduce the idea of <em>list comprehension</em>.</p>
+<section id="list-comprehension">
+<h3>List Comprehension<a class="headerlink" href="#list-comprehension" title="Permalink to this heading">#</a></h3>
+<p>Often we encounter a sequence of objects which we would like to transform
+for some other task. Below, we compute the VIF for each
+feature in our <code class="docutils literal notranslate"><span class="pre">X</span></code> matrix and produce a data frame
+whose index agrees with the columns of <code class="docutils literal notranslate"><span class="pre">X</span></code>.
+The notion of list comprehension can often make such
+a task easier.</p>
+<p>List comprehensions are simple and powerful ways to form
+lists of <code class="docutils literal notranslate"><span class="pre">Python</span></code> objects. The language also supports
+dictionary and <em>generator</em> comprehension, though these are
+beyond our scope here. Let’s look at an example. We compute the VIF for each of the variables
+in the model matrix <code class="docutils literal notranslate"><span class="pre">X</span></code>, using the function <code class="docutils literal notranslate"><span class="pre">variance_inflation_factor()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vals</span> <span class="o">=</span> <span class="p">[</span><span class="n">VIF</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+<span class="n">vif</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;vif&#39;</span><span class="p">:</span><span class="n">vals</span><span class="p">},</span>
+                   <span class="n">index</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+<span class="n">vif</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>vif</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>crim</th>
+      <td>1.767486</td>
+    </tr>
+    <tr>
+      <th>zn</th>
+      <td>2.298459</td>
+    </tr>
+    <tr>
+      <th>indus</th>
+      <td>3.987181</td>
+    </tr>
+    <tr>
+      <th>chas</th>
+      <td>1.071168</td>
+    </tr>
+    <tr>
+      <th>nox</th>
+      <td>4.369093</td>
+    </tr>
+    <tr>
+      <th>rm</th>
+      <td>1.912532</td>
+    </tr>
+    <tr>
+      <th>age</th>
+      <td>3.088232</td>
+    </tr>
+    <tr>
+      <th>dis</th>
+      <td>3.954037</td>
+    </tr>
+    <tr>
+      <th>rad</th>
+      <td>7.445301</td>
+    </tr>
+    <tr>
+      <th>tax</th>
+      <td>9.002158</td>
+    </tr>
+    <tr>
+      <th>ptratio</th>
+      <td>1.797060</td>
+    </tr>
+    <tr>
+      <th>lstat</th>
+      <td>2.870777</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The function <code class="docutils literal notranslate"><span class="pre">VIF()</span></code> takes two arguments: a dataframe or array,
+and a variable column index. In the code above we call <code class="docutils literal notranslate"><span class="pre">VIF()</span></code> on the fly for all columns in <code class="docutils literal notranslate"><span class="pre">X</span></code>.<br />
+We have excluded column 0 above (the intercept), which is not of interest. In this case the VIFs are not that exciting.</p>
+<p>The object <code class="docutils literal notranslate"><span class="pre">vals</span></code> above could have been constructed with the following for loop:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vals</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+    <span class="n">vals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">VIF</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>List comprehension allows us to perform such repetitive operations in a more straightforward way.</p>
+</section>
+</section>
+<section id="interaction-terms">
+<h2>Interaction Terms<a class="headerlink" href="#interaction-terms" title="Permalink to this heading">#</a></h2>
+<p>It is easy to include interaction terms in a linear model using <code class="docutils literal notranslate"><span class="pre">ModelSpec()</span></code>.
+Including a tuple <code class="docutils literal notranslate"><span class="pre">(&quot;lstat&quot;,&quot;age&quot;)</span></code> tells the model
+matrix builder to include an interaction term between
+<code class="docutils literal notranslate"><span class="pre">lstat</span></code>  and  <code class="docutils literal notranslate"><span class="pre">age</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">MS</span><span class="p">([</span><span class="s1">&#39;lstat&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;age&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="s1">&#39;lstat&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">)])</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">Boston</span><span class="p">)</span>
+<span class="n">model2</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<span class="n">summarize</span><span class="p">(</span><span class="n">model2</span><span class="o">.</span><span class="n">fit</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>coef</th>
+      <th>std err</th>
+      <th>t</th>
+      <th>P&gt;|t|</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>intercept</th>
+      <td>36.0885</td>
+      <td>1.470</td>
+      <td>24.553</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>lstat</th>
+      <td>-1.3921</td>
+      <td>0.167</td>
+      <td>-8.313</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>age</th>
+      <td>-0.0007</td>
+      <td>0.020</td>
+      <td>-0.036</td>
+      <td>0.971</td>
+    </tr>
+    <tr>
+      <th>lstat:age</th>
+      <td>0.0042</td>
+      <td>0.002</td>
+      <td>2.244</td>
+      <td>0.025</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="non-linear-transformations-of-the-predictors">
+<h2>Non-linear Transformations of the Predictors<a class="headerlink" href="#non-linear-transformations-of-the-predictors" title="Permalink to this heading">#</a></h2>
+<p>The model matrix builder can include terms beyond
+just column names and interactions. For instance,
+the <code class="docutils literal notranslate"><span class="pre">poly()</span></code> function supplied in <code class="docutils literal notranslate"><span class="pre">ISLP</span></code> specifies that
+columns representing polynomial functions
+of its first argument are added to the model matrix.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">MS</span><span class="p">([</span><span class="n">poly</span><span class="p">(</span><span class="s1">&#39;lstat&#39;</span><span class="p">,</span> <span class="n">degree</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span> <span class="s1">&#39;age&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">Boston</span><span class="p">)</span>
+<span class="n">model3</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<span class="n">results3</span> <span class="o">=</span> <span class="n">model3</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">summarize</span><span class="p">(</span><span class="n">results3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>coef</th>
+      <th>std err</th>
+      <th>t</th>
+      <th>P&gt;|t|</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>intercept</th>
+      <td>17.7151</td>
+      <td>0.781</td>
+      <td>22.681</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>poly(lstat, degree=2)[0]</th>
+      <td>-179.2279</td>
+      <td>6.733</td>
+      <td>-26.620</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>poly(lstat, degree=2)[1]</th>
+      <td>72.9908</td>
+      <td>5.482</td>
+      <td>13.315</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>age</th>
+      <td>0.0703</td>
+      <td>0.011</td>
+      <td>6.471</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The effectively zero <em>p</em>-value associated with the quadratic term
+(i.e. the third row above) suggests that it leads to an improved model.</p>
+<p>By default, <code class="docutils literal notranslate"><span class="pre">poly()</span></code> creates a basis matrix for inclusion in the
+model matrix whose
+columns are <em>orthogonal polynomials</em>, which are designed for stable
+least squares computations. {Actually, <code class="docutils literal notranslate"><span class="pre">poly()</span></code> is a  wrapper for the workhorse and standalone  function <code class="docutils literal notranslate"><span class="pre">Poly()</span></code> that does the  work in building the model matrix.}
+Alternatively, had we included an argument
+<code class="docutils literal notranslate"><span class="pre">raw=True</span></code> in the above call to <code class="docutils literal notranslate"><span class="pre">poly()</span></code>, the basis matrix would consist simply of
+<code class="docutils literal notranslate"><span class="pre">lstat</span></code> and <code class="docutils literal notranslate"><span class="pre">lstat**2</span></code>. Since either of these bases
+represent quadratic polynomials, the fitted values  would not
+change in this case, just the polynomial coefficients.  Also by default, the columns
+created by <code class="docutils literal notranslate"><span class="pre">poly()</span></code> do not include an intercept column as
+that is automatically added by <code class="docutils literal notranslate"><span class="pre">MS()</span></code>.</p>
+<p>We use the <code class="docutils literal notranslate"><span class="pre">anova_lm()</span></code> function to further quantify the extent to which the quadratic fit is
+superior to the linear fit.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">anova_lm</span><span class="p">(</span><span class="n">results1</span><span class="p">,</span> <span class="n">results3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>df_resid</th>
+      <th>ssr</th>
+      <th>df_diff</th>
+      <th>ss_diff</th>
+      <th>F</th>
+      <th>Pr(&gt;F)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>503.0</td>
+      <td>19168.128609</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>502.0</td>
+      <td>14165.613251</td>
+      <td>1.0</td>
+      <td>5002.515357</td>
+      <td>177.278785</td>
+      <td>7.468491e-35</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Here <code class="docutils literal notranslate"><span class="pre">results1</span></code> represents the linear submodel containing
+predictors <code class="docutils literal notranslate"><span class="pre">lstat</span></code> and <code class="docutils literal notranslate"><span class="pre">age</span></code>,
+while <code class="docutils literal notranslate"><span class="pre">results3</span></code> corresponds to the larger model above  with a quadratic
+term in <code class="docutils literal notranslate"><span class="pre">lstat</span></code>.
+The <code class="docutils literal notranslate"><span class="pre">anova_lm()</span></code> function performs a hypothesis test
+comparing the two models. The null hypothesis is that the quadratic
+term in the bigger model is not needed, and the alternative hypothesis is that the
+bigger model is superior. Here the <em>F</em>-statistic is 177.28 and
+the associated <em>p</em>-value is zero.
+In this case the <em>F</em>-statistic is the square of the
+<em>t</em>-statistic for the quadratic term in the linear model summary
+for <code class="docutils literal notranslate"><span class="pre">results3</span></code> — a consequence of the fact that these nested
+models differ by one degree of freedom.
+This provides very clear evidence that the quadratic polynomial in
+<code class="docutils literal notranslate"><span class="pre">lstat</span></code> improves the linear model.
+This is not surprising, since earlier we saw evidence for non-linearity in the relationship between <code class="docutils literal notranslate"><span class="pre">medv</span></code>
+and  <code class="docutils literal notranslate"><span class="pre">lstat</span></code>.</p>
+<p>The function <code class="docutils literal notranslate"><span class="pre">anova_lm()</span></code> can take more than two nested models
+as input, in which case it compares every successive pair of models.
+That also explains why their are <code class="docutils literal notranslate"><span class="pre">NaN</span></code>s in the first row above, since
+there is no previous model with which to compare the first.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">results3</span><span class="o">.</span><span class="n">fittedvalues</span><span class="p">,</span> <span class="n">results3</span><span class="o">.</span><span class="n">resid</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Fitted value&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Residual&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D at 0x7f1cc7293e20&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/16eaf9c2bdb046a15065c6467a4b95e9d8b13d9120ab9c29154c329ed68ff678.png" src="../../../_images/16eaf9c2bdb046a15065c6467a4b95e9d8b13d9120ab9c29154c329ed68ff678.png" />
+</div>
+</div>
+<p>We see that when the quadratic term is included in the model,
+there is little discernible pattern in the residuals.
+In order to create a cubic or higher-degree polynomial fit, we can simply change the degree argument
+to <code class="docutils literal notranslate"><span class="pre">poly()</span></code>.</p>
+</section>
+<section id="qualitative-predictors">
+<h2>Qualitative Predictors<a class="headerlink" href="#qualitative-predictors" title="Permalink to this heading">#</a></h2>
+<p>Here we use the  <code class="docutils literal notranslate"><span class="pre">Carseats</span></code>  data, which is included in the
+<code class="docutils literal notranslate"><span class="pre">ISLP</span></code> package. We will  attempt to predict <code class="docutils literal notranslate"><span class="pre">Sales</span></code>
+(child car seat sales) in 400 locations based on a number of
+predictors.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Carseats</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="s1">&#39;Carseats&#39;</span><span class="p">)</span>
+<span class="n">Carseats</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Sales&#39;, &#39;CompPrice&#39;, &#39;Income&#39;, &#39;Advertising&#39;, &#39;Population&#39;, &#39;Price&#39;,
+       &#39;ShelveLoc&#39;, &#39;Age&#39;, &#39;Education&#39;, &#39;Urban&#39;, &#39;US&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">Carseats</span></code><br />
+data includes qualitative predictors such as
+<code class="docutils literal notranslate"><span class="pre">ShelveLoc</span></code>, an indicator of the quality of the shelving
+location — that is,
+the  space within a store in which the car seat is displayed. The predictor
+<code class="docutils literal notranslate"><span class="pre">ShelveLoc</span></code>  takes on three possible values, <code class="docutils literal notranslate"><span class="pre">Bad</span></code>, <code class="docutils literal notranslate"><span class="pre">Medium</span></code>, and <code class="docutils literal notranslate"><span class="pre">Good</span></code>.
+Given a qualitative variable such as  <code class="docutils literal notranslate"><span class="pre">ShelveLoc</span></code>, <code class="docutils literal notranslate"><span class="pre">ModelSpec()</span></code> generates dummy
+variables automatically.
+These variables are often referred to as a <em>one-hot encoding</em> of the categorical
+feature. Their columns sum to one, so to avoid collinearity with an intercept, the first column is dropped. Below we see
+the column <code class="docutils literal notranslate"><span class="pre">ShelveLoc[Bad]</span></code> has been dropped, since <code class="docutils literal notranslate"><span class="pre">Bad</span></code> is the first level of <code class="docutils literal notranslate"><span class="pre">ShelveLoc</span></code>.
+Below we fit a multiple regression model that includes some interaction terms.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allvars</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">Carseats</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Sales&#39;</span><span class="p">))</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">Carseats</span><span class="p">[</span><span class="s1">&#39;Sales&#39;</span><span class="p">]</span>
+<span class="n">final</span> <span class="o">=</span> <span class="n">allvars</span> <span class="o">+</span> <span class="p">[(</span><span class="s1">&#39;Income&#39;</span><span class="p">,</span> <span class="s1">&#39;Advertising&#39;</span><span class="p">),</span>
+                   <span class="p">(</span><span class="s1">&#39;Price&#39;</span><span class="p">,</span> <span class="s1">&#39;Age&#39;</span><span class="p">)]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">MS</span><span class="p">(</span><span class="n">final</span><span class="p">)</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">Carseats</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<span class="n">summarize</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>coef</th>
+      <th>std err</th>
+      <th>t</th>
+      <th>P&gt;|t|</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>intercept</th>
+      <td>6.5756</td>
+      <td>1.009</td>
+      <td>6.519</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>CompPrice</th>
+      <td>0.0929</td>
+      <td>0.004</td>
+      <td>22.567</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>Income</th>
+      <td>0.0109</td>
+      <td>0.003</td>
+      <td>4.183</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>Advertising</th>
+      <td>0.0702</td>
+      <td>0.023</td>
+      <td>3.107</td>
+      <td>0.002</td>
+    </tr>
+    <tr>
+      <th>Population</th>
+      <td>0.0002</td>
+      <td>0.000</td>
+      <td>0.433</td>
+      <td>0.665</td>
+    </tr>
+    <tr>
+      <th>Price</th>
+      <td>-0.1008</td>
+      <td>0.007</td>
+      <td>-13.549</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>ShelveLoc[Good]</th>
+      <td>4.8487</td>
+      <td>0.153</td>
+      <td>31.724</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>ShelveLoc[Medium]</th>
+      <td>1.9533</td>
+      <td>0.126</td>
+      <td>15.531</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>Age</th>
+      <td>-0.0579</td>
+      <td>0.016</td>
+      <td>-3.633</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th>Education</th>
+      <td>-0.0209</td>
+      <td>0.020</td>
+      <td>-1.063</td>
+      <td>0.288</td>
+    </tr>
+    <tr>
+      <th>Urban[Yes]</th>
+      <td>0.1402</td>
+      <td>0.112</td>
+      <td>1.247</td>
+      <td>0.213</td>
+    </tr>
+    <tr>
+      <th>US[Yes]</th>
+      <td>-0.1576</td>
+      <td>0.149</td>
+      <td>-1.058</td>
+      <td>0.291</td>
+    </tr>
+    <tr>
+      <th>Income:Advertising</th>
+      <td>0.0008</td>
+      <td>0.000</td>
+      <td>2.698</td>
+      <td>0.007</td>
+    </tr>
+    <tr>
+      <th>Price:Age</th>
+      <td>0.0001</td>
+      <td>0.000</td>
+      <td>0.801</td>
+      <td>0.424</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>In the first line above, we made <code class="docutils literal notranslate"><span class="pre">allvars</span></code> a list, so that we
+could add the interaction terms two lines down.
+Our model-matrix builder has created a <code class="docutils literal notranslate"><span class="pre">ShelveLoc[Good]</span></code>
+dummy variable that takes on a value of 1 if the
+shelving location is good, and 0 otherwise. It has also created a <code class="docutils literal notranslate"><span class="pre">ShelveLoc[Medium]</span></code>
+dummy variable that equals 1 if the shelving location is medium, and 0 otherwise.
+A bad shelving location corresponds to a zero for each of the two dummy variables.
+The fact that the coefficient for <code class="docutils literal notranslate"><span class="pre">ShelveLoc[Good]</span></code> in the regression output is
+positive indicates that a good shelving location is associated with high sales (relative to a bad location).
+And <code class="docutils literal notranslate"><span class="pre">ShelveLoc[Medium]</span></code> has a smaller positive coefficient,
+indicating that a medium shelving location leads to higher sales than a bad
+shelving location, but lower sales than a good shelving location.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs/labs/notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Ch02-statlearn-lab.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Chapter 2</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Ch04-classification-lab.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 4</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Chapter 3</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-linear-regression">Lab: Linear Regression</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-packages">Importing packages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#new-imports">New imports</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspecting-objects-and-namespaces">Inspecting Objects and Namespaces</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-linear-regression">Simple Linear Regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-transformations-fit-and-transform">Using Transformations: Fit and Transform</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-functions">Defining Functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-linear-regression">Multiple Linear Regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multivariate-goodness-of-fit">Multivariate Goodness of Fit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-comprehension">List Comprehension</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-terms">Interaction Terms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-transformations-of-the-predictors">Non-linear Transformations of the Predictors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#qualitative-predictors">Qualitative Predictors</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Trevor Hastie et al.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
