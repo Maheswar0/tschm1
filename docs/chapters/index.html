@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/chapters/index';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Chapter 2" href="notebooks/Ch2-statlearn-lab.html" />
+    <link rel="next" title="Chapter 10" href="notebooks/Ch10-deeplearning-lab.html" />
     <link rel="prev" title="Introduction to Statistical Learning" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -160,9 +160,27 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Introduction to Statistical Learning</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Ch10-deeplearning-lab.html">Chapter 10</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Ch11-surv-lab.html">Chapter 11</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Ch12-unsup-lab.html">Chapter 12</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Ch13-multiple-lab.html">Chapter 13</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="notebooks/Ch2-statlearn-lab.html">Chapter 2</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="notebooks/Ch3-linreg-lab.html">Chapter 3</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Ch5-resample-lab.html">Chapter 5</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Ch6-varselect-lab.html">Chapter 6</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Ch7-nonlin-lab.html">Chapter 7</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Ch8-baggboost-lab.html">Chapter 8</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Ch9-svm-lab.html">Chapter 9</a></li>
 
 </ul>
 </li>
@@ -382,10 +400,28 @@ document.write(`
 <h1>Introduction to Statistical Learning<a class="headerlink" href="#introduction-to-statistical-learning" title="Permalink to this heading">#</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/Ch10-deeplearning-lab.html">Chapter 10</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/Ch10-deeplearning-lab.html#lab-deep-learning">Lab: Deep Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/Ch11-surv-lab.html">Chapter 11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/Ch11-surv-lab.html#lab-survival-analysis">Lab: Survival Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/Ch12-unsup-lab.html">Chapter 12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/Ch12-unsup-lab.html#lab-unsupervised-learning">Lab: Unsupervised Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/Ch13-multiple-lab.html">Chapter 13</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/Ch13-multiple-lab.html#lab-multiple-testing">Lab: Multiple Testing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/Ch2-statlearn-lab.html">Chapter 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/Ch2-statlearn-lab.html#lab-introduction-to-python">Lab: Introduction to Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/Ch3-linreg-lab.html">Chapter 3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/Ch3-linreg-lab.html#lab-linear-regression">Lab: Linear Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/Ch5-resample-lab.html">Chapter 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/Ch5-resample-lab.html#lab-cross-validation-and-the-bootstrap">Lab: Cross-Validation and the Bootstrap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/Ch6-varselect-lab.html">Chapter 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/Ch6-varselect-lab.html#lab-linear-models-and-regularization-methods">Lab: Linear Models and Regularization Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/Ch7-nonlin-lab.html">Chapter 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/Ch7-nonlin-lab.html#lab-non-linear-modeling">Lab: Non-Linear Modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/Ch8-baggboost-lab.html">Chapter 8</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/Ch8-baggboost-lab.html#lab-tree-based-methods">Lab: Tree-Based Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/Ch9-svm-lab.html">Chapter 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/Ch9-svm-lab.html#lab-support-vector-machines">Lab: Support Vector Machines</a></li>
 </ul>
 </div>
 </section>
@@ -431,11 +467,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="notebooks/Ch2-statlearn-lab.html"
+       href="notebooks/Ch10-deeplearning-lab.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Chapter 2</p>
+        <p class="prev-next-title">Chapter 10</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

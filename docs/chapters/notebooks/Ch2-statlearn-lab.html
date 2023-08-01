@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Chapter 3" href="Ch3-linreg-lab.html" />
-    <link rel="prev" title="Introduction to Statistical Learning" href="../index.html" />
+    <link rel="prev" title="Chapter 13" href="Ch13-multiple-lab.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -162,9 +162,27 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Introduction to Statistical Learning</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Ch10-deeplearning-lab.html">Chapter 10</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Ch11-surv-lab.html">Chapter 11</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Ch12-unsup-lab.html">Chapter 12</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Ch13-multiple-lab.html">Chapter 13</a></li>
+
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Chapter 2</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="Ch3-linreg-lab.html">Chapter 3</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Ch5-resample-lab.html">Chapter 5</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Ch6-varselect-lab.html">Chapter 6</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Ch7-nonlin-lab.html">Chapter 7</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Ch8-baggboost-lab.html">Chapter 8</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Ch9-svm-lab.html">Chapter 9</a></li>
 
 </ul>
 </li>
@@ -946,16 +964,16 @@ a single random variable will be generated unless the argument to <code class="d
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.27473291, -0.53505594,  0.98982696,  0.50446228, -1.35975058,
-       -0.21916869,  0.8463805 ,  1.37409616,  0.61659015, -0.05489023,
-       -0.13862019,  0.65381287, -0.0179233 ,  2.31906726,  2.81035073,
-        0.94545941, -0.51090753,  0.29322641, -2.51008216, -0.21089648,
-        2.02173393, -0.62616313, -0.20121641,  1.26229626,  0.21757471,
-       -0.24402538,  1.08140751, -0.81045637, -0.6096027 ,  0.20437962,
-        0.36788702, -0.33001646, -0.82169363,  0.39909844, -1.66274104,
-       -0.77870305, -0.92380367,  2.18280778,  0.71454175,  0.26648108,
-        0.23146065, -1.44230038,  0.146191  ,  0.37106899, -0.04032794,
-       -0.83617346, -0.24837962, -0.62373373, -0.69202517,  0.79936964])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.14766945, -0.12411031,  1.21825102, -0.0714827 , -1.23893748,
+        1.56920583, -1.2111592 ,  1.21816198, -0.68176821,  0.48307767,
+       -2.06774275, -1.38616835, -0.07234608,  0.98416274, -0.26165892,
+        0.39245962,  0.44177864,  1.44796091,  0.46337001, -0.5015242 ,
+        1.57288543,  1.9872194 ,  1.20390146,  2.28166231,  0.19393314,
+       -2.46880349, -1.50061578,  0.35518107, -0.8242261 ,  0.3150815 ,
+       -0.00415362, -0.01104574, -0.50568003,  0.3873277 , -0.20779455,
+       -0.35840065,  1.35302542, -0.16045524,  1.57815017, -0.35513704,
+        0.75849942,  0.18617318, -1.01283871,  0.53375243, -0.11427795,
+       -0.6144432 , -0.92814565, -0.15462019,  0.73230637,  0.30354768])
 </pre></div>
 </div>
 </div>
@@ -977,8 +995,8 @@ correlation between <code class="docutils literal notranslate"><span class="pre"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1.       , 0.7298462],
-       [0.7298462, 1.       ]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1.        , 0.72027902],
+       [0.72027902, 1.        ]])
 </pre></div>
 </div>
 </div>
@@ -995,8 +1013,8 @@ time we call <code class="docutils literal notranslate"><span class="pre">np.ran
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3.11842956 1.51889075]
-[ 6.55455481 -1.70282533]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.38471802  3.92635596]
+[-2.23228594  1.34972844]
 </pre></div>
 </div>
 </div>
@@ -1218,7 +1236,7 @@ If we omit the trailing semi-colon, then we obtain the following output:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fbd60a016c0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f4624d81ba0&gt;
 </pre></div>
 </div>
 <img alt="../../../_images/f2ed7eeb6c1689cf671d05025fea9f8ca9d97b500210d7e45c0bc5e02832d317.png" src="../../../_images/f2ed7eeb6c1689cf671d05025fea9f8ca9d97b500210d7e45c0bc5e02832d317.png" />
@@ -2914,12 +2932,12 @@ for a subset of the variables.</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../index.html"
+       href="Ch13-multiple-lab.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Introduction to Statistical Learning</p>
+        <p class="prev-next-title">Chapter 13</p>
       </div>
     </a>
     <a class="right-next"
