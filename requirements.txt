@@ -1,4 +1,8 @@
 cvxpy
 matplotlib
+pandas
 dask
 scipy
+ISLP
+statsmodels
+scikit-learn
