@@ -64,11 +64,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/chapters/notebooks/Ch7-nonlin-lab';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/labs/notebooks/Ch07-nonlin-lab';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Chapter 8" href="Ch8-baggboost-lab.html" />
-    <link rel="prev" title="Chapter 6" href="Ch6-varselect-lab.html" />
+    <link rel="next" title="Chapter 8" href="Ch08-baggboost-lab.html" />
+    <link rel="prev" title="Chapter 6" href="Ch06-varselect-lab.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -155,13 +155,27 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../index.html">
-                    Introduction to Statistical Learning
+                    An Introduction to Statistical Learning
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Introduction to Statistical Learning</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Labs</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Ch02-statlearn-lab.html">Chapter 2</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Ch03-linreg-lab.html">Chapter 3</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Ch05-resample-lab.html">Chapter 5</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Ch06-varselect-lab.html">Chapter 6</a></li>
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Chapter 7</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Ch08-baggboost-lab.html">Chapter 8</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Ch09-svm-lab.html">Chapter 9</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="Ch10-deeplearning-lab.html">Chapter 10</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="Ch11-surv-lab.html">Chapter 11</a></li>
@@ -170,22 +184,9 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l2"><a class="reference internal" href="Ch13-multiple-lab.html">Chapter 13</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="Ch2-statlearn-lab.html">Chapter 2</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="Ch3-linreg-lab.html">Chapter 3</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="Ch5-resample-lab.html">Chapter 5</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="Ch6-varselect-lab.html">Chapter 6</a></li>
-
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Chapter 7</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="Ch8-baggboost-lab.html">Chapter 8</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="Ch9-svm-lab.html">Chapter 9</a></li>
-
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../slides/index.html">Slides</a></li>
 </ul>
 
     </div>
@@ -240,7 +241,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/tschm/isl/master?urlpath=tree/book/docs/chapters/notebooks/Ch7-nonlin-lab.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/tschm/isl/master?urlpath=tree/book/docs/labs/notebooks/Ch07-nonlin-lab.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +289,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/tschm/isl/edit/master/book/docs/chapters/notebooks/Ch7-nonlin-lab.ipynb" target="_blank"
+      <li><a href="https://github.com/tschm/isl/edit/master/book/docs/labs/notebooks/Ch07-nonlin-lab.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -305,7 +306,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/tschm/isl/issues/new?title=Issue%20on%20page%20%2Fdocs/chapters/notebooks/Ch7-nonlin-lab.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/tschm/isl/issues/new?title=Issue%20on%20page%20%2Fdocs/labs/notebooks/Ch07-nonlin-lab.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -335,7 +336,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/docs/chapters/notebooks/Ch7-nonlin-lab.ipynb" target="_blank"
+      <li><a href="../../../_sources/docs/labs/notebooks/Ch07-nonlin-lab.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -1685,7 +1686,7 @@ degrees of freedom.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.000000099999339
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.000000099998919
 </pre></div>
 </div>
 </div>
@@ -1887,7 +1888,7 @@ We also produce the plot for <code class="docutils literal notranslate"><span cl
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Partial dependence of year on wage&#39;)
 </pre></div>
 </div>
-<img alt="../../../_images/4ced547e68d30c5e46d2b197c5a822ba7eaca9ff2a5d087351296621d6f59583.png" src="../../../_images/4ced547e68d30c5e46d2b197c5a822ba7eaca9ff2a5d087351296621d6f59583.png" />
+<img alt="../../../_images/15807bd4ca9d8a103528814e76a06675fbd1f2e2069d7b962936351d45c77669.png" src="../../../_images/15807bd4ca9d8a103528814e76a06675fbd1f2e2069d7b962936351d45c77669.png" />
 </div>
 </div>
 <p>Finally we plot <code class="docutils literal notranslate"><span class="pre">education</span></code>, which is categorical. The partial dependence plot is different, and more suitable for the set of fitted constants for each level of this variable.</p>
@@ -2119,7 +2120,7 @@ WARNING: p-values calculated in this manner behave correctly for un-penalized mo
          are typically lower than they should be, meaning that the tests reject the null too readily.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2471/2135516388.py:1: UserWarning: KNOWN BUG: p-values computed in this summary are likely much smaller than they should be. 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2102/2135516388.py:1: UserWarning: KNOWN BUG: p-values computed in this summary are likely much smaller than they should be. 
  
 Please do not make inferences based on these values! 
 
@@ -2310,7 +2311,7 @@ removed those observations.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/c0cb10a2cc08bd2e452fbe07a4ca04b88b508773bc87fd64aa0d5e0f12be2ad6.png" src="../../../_images/c0cb10a2cc08bd2e452fbe07a4ca04b88b508773bc87fd64aa0d5e0f12be2ad6.png" />
+<img alt="../../../_images/c22c728d0238c4ac6fe1cd8e1cd4056e7299100dfcf2e03c86c898e401fd2ab7.png" src="../../../_images/c22c728d0238c4ac6fe1cd8e1cd4056e7299100dfcf2e03c86c898e401fd2ab7.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2324,7 +2325,7 @@ removed those observations.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/8c1bdd262da7a4d75749a15479d34aa98bd46a210e2e7ff31a2fe7c52fcdb116.png" src="../../../_images/8c1bdd262da7a4d75749a15479d34aa98bd46a210e2e7ff31a2fe7c52fcdb116.png" />
+<img alt="../../../_images/c4d8e9af5dc5156a3d8ffe1f1cdab6fd776cc48cdf30e5a4ae9ba71497df7ae0.png" src="../../../_images/c4d8e9af5dc5156a3d8ffe1f1cdab6fd776cc48cdf30e5a4ae9ba71497df7ae0.png" />
 </div>
 </div>
 </section>
@@ -2377,7 +2378,7 @@ the observations. As expected, using a span of 0.5 is smoother than 0.2.</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./docs/chapters/notebooks"
+            path: "./docs/labs/notebooks"
         },
         predefinedOutput: true
     }
@@ -2396,7 +2397,7 @@ the observations. As expected, using a span of 0.5 is smoother than 0.2.</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Ch6-varselect-lab.html"
+       href="Ch06-varselect-lab.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
@@ -2405,7 +2406,7 @@ the observations. As expected, using a span of 0.5 is smoother than 0.2.</p>
       </div>
     </a>
     <a class="right-next"
-       href="Ch8-baggboost-lab.html"
+       href="Ch08-baggboost-lab.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
