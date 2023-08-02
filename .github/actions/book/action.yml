@@ -28,13 +28,6 @@ runs:
           book/_build/.jupyter_cache
         key: ${{ runner.os }}-book
 
-    #- name: Load cached book execution
-    #  id: cache
-    #  uses: actions/cache/restore@v3
-    #  with:
-    #    path: book/_build/.jupyter_cache
-    #    key: ${{ runner.os }}-jupyter-${{ hashFiles('**/*') }}
-
     #  Build the book
     - name: Build the book
       shell: bash
