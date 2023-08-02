@@ -20,4 +20,4 @@ parts:
           - file: docs/labs/notebooks/Ch12-unsup-lab
           - file: docs/labs/notebooks/Ch13-multiple-lab
 
-      - file: docs/slides/index
+      - file: docs/material/index
